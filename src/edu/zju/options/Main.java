@@ -4,13 +4,12 @@
  */
 package edu.zju.options;
 
-import edu.zju.common.GZipUtil;
 import edu.zju.gips.GIPS;
 import edu.zju.gips.ResultOutputer;
-import java.io.IOException;
 import edu.zju.parameter.GIPSJob;
 import edu.zju.parameter.GlobalParameter;
 import edu.zju.parameter.ParameterLoader;
+import java.io.IOException;
 
 /**
  *
