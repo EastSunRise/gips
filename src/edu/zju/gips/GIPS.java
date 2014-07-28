@@ -102,7 +102,7 @@ public class GIPS {
                 this.estimateMaxSampleNumberHarboringMutationInSameGene(this.sampleParameterBag.getCandidateGeneBag());
                 
                 
-                genomeEffectiveRegion=this.getHunmanGenomeEffectiveRegion();
+                genomeEffectiveRegion=this.getLibraryVariantGenomeEffectiveRegion();
                 if(filterParameter.isNeedEffectiveRegionParameter()){
                         filterParameter.setGenomeEffectiveRegion(genomeEffectiveRegion);
                 }
@@ -181,11 +181,11 @@ public class GIPS {
                 }
                 return this.genomeEffectiveRegion;
         }
-        private GenomeEffectiveRegion getHunmanGenomeEffectiveRegion() {
-                if(GlobalParameter.getSampleGffFile().getFilePath().trim().equals(GlobalParameter.getHomoSapiensGenomeGffFile().getFilePath().trim())){
+        private GenomeEffectiveRegion getLibraryVariantGenomeEffectiveRegion() {
+                if(GlobalParameter.getSampleGffFile().getFilePath().trim().equals(new GlobalParameter().getLibraryGenomeGffFile().getFilePath().trim())){
                         return this.genomeEffectiveRegion;
                 }
-                return this.genomeEffectiveRegion=GlobalParameter.getGenomeEffectiveRegion(GlobalParameter.getHomoSapiensGenomeGffFile());
+                return this.genomeEffectiveRegion=GlobalParameter.getGenomeEffectiveRegion(new GlobalParameter().getLibraryGenomeGffFile());
         }
         /**
          * In this function,background mutation rate will be calculated and put

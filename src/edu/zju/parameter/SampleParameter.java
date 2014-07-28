@@ -75,7 +75,7 @@ public class SampleParameter {
                                                 info=Init.getDataDirectory()+edu.zju.common.CExecutor.getFileSeparator()+info;
                                         }
                                         this.setVCFFile(FileFactory.getInputFile(info, "VCF"));
-                                        this.vcf_md5=this.vcfFile.getFileMD5();
+                                        this.vcf_md5=this.getVCFFile().getFileMD5();
                                         break;
                                 }
                                 case "READS_ALIGNMENT.SAM" :{

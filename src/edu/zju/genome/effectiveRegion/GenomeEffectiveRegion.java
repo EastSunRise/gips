@@ -77,7 +77,10 @@ public class GenomeEffectiveRegion extends edu.zju.genome.abstractGenome.Genome{
      * @return an object of chromosomeEffectiveRegion
      */
     public ChromosomeEffectiveRegion getChromosomeEffectiveRegion(String chrID){
-           return chromosomeEffectiveRegion.get(chrID);
+            if(!this.chromosomeEffectiveRegion.keySet().contains(chrID)){
+                    throw new NullPointerException();
+            }
+            return chromosomeEffectiveRegion.get(chrID);
     }
     /**
      * 

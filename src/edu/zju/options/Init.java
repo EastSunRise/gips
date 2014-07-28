@@ -105,10 +105,6 @@ public class Init {
                                 parameterFile.write("PROJECT :"+projectName+item.split(":")[1]+'\n');
                                 continue;
                         }
-                        if(item.startsWith("LIB_PH")){
-                                parameterFile.write("LIB_PHENOTYPE_VAR : "+edu.zju.common.CExecutor.getCurrentDirectoy()+edu.zju.common.CExecutor.getFileSeparator()+"GIPS.jar"+Config.getItem("CLIN_VAR_LIB")+"\n");
-                                continue;
-                        }
                         parameterFile.write(item+"\n");
                 }
                 parameterFile.write("\n[SAMPLE_LIST]\n\n");

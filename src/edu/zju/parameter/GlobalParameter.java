@@ -1,20 +1,28 @@
 package edu.zju.parameter;
 
+import edu.zju.common.CExecutor;
+import edu.zju.common.ZipUtil;
 import edu.zju.file.CommonInputFile;
 import edu.zju.file.Config;
 import edu.zju.file.FileFactory;
 import edu.zju.genome.effectiveRegion.GenomeEffectiveRegion;
 import edu.zju.genome.gffGenome.Genome;
+import edu.zju.options.Init;
+import edu.zju.variant.SampleVariant;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
-import edu.zju.options.Init;
-import edu.zju.variant.SampleVariant;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -30,9 +38,10 @@ public class GlobalParameter {
         private static String effectiveRegion="CDS|SpliceSite=2";
         private static String filters="EBA";
         private static int anticipation=0;
-        private int artificialSNPNumber=10000;
+        private int artificialSNPNumber=5000;
         private static String clinicalVariantLibrary;
-        private static edu.zju.file.CommonInputFile homosapiensGffFile;
+        private static edu.zju.file.CommonInputFile libGffFile;
+        private static String libVarGenomeVersion;
         //not in .ini file, but needed here
         private String controlFilePath;
         private int snpDensity=3;
@@ -104,9 +113,9 @@ public class GlobalParameter {
                                         snpEffPath=info;
                                         break;
                                 }
-                                case "HUMAN_GRCH37_ANNOTATION.GFF":{
+                                case "LIB_GENOME_ANNOTATION.GFF":{
                                         if(info==null)edu.zju.common.CExecutor.stopProgram("Please set Genome.gff");
-                                        homosapiensGffFile=FileFactory.getInputFile(entry.getValue(),"GFF");
+                                        libGffFile=FileFactory.getInputFile(entry.getValue(),"GFF");
                                         break;
                                 }
                                 case "LIB_PHENOTYPE_VAR":{
@@ -125,13 +134,20 @@ public class GlobalParameter {
                                         if(info!=null&&!info.isEmpty())this.maxAAsimilarityScore=Integer.parseInt(entry.getValue());
                                         break;                                
                                 }         
-                                        
+                                case "LIB_VAR_SNPEFF_GENOME_VERSION":{
+                                        libVarGenomeVersion=info;
+                                        break;
+                                }        
                                         
                                         
                         }
                         
                 }
-                
+                if((libGffFile!=null&&libVarGenomeVersion!=null&&clinicalVariantLibrary!=null)||(libGffFile==null&&libVarGenomeVersion==null&&clinicalVariantLibrary==null)){
+                        
+                }else {
+                        edu.zju.common.CExecutor.stopProgram("Please set    LIB_VAR_SNPEFF_GENOME_VERSION    LIB_PHENOTYPE_VAR    and    LIB_GENOME_ANNOTATION.GFF");
+                }
         }
         
         public GlobalParameter() {
@@ -163,6 +179,8 @@ public class GlobalParameter {
         public static int getAnticipation(){
                 if(anticipation==0){
                         anticipation=sampleNumber;
+                }else if(anticipation>sampleNumber||anticipation<=0){
+                     CExecutor.println(CExecutor.getRunningTime()+"CANDIDATE_CRITERIA is reset to sample numbers");   
                 }
                 return anticipation;
         }
@@ -208,14 +226,57 @@ public class GlobalParameter {
                 filterParameter.setFilterStrategy(filters);
                 return filterParameter;
         }
-        public static CommonInputFile getHomoSapiensGenomeGffFile(){
-                if(homosapiensGffFile==null)edu.zju.common.CExecutor.stopProgram("Please set \"HUMAN_GRCH37_ANNOTATION.GFF\""
-                        + "\n Available in http://ftp.ncbi.nih.gov//genomes/H_sapiens/ARCHIVE/ANNOTATION_RELEASE.105/GFF/ref_GRCh37.p13_top_level.gff3.gz");
-                return homosapiensGffFile;
+        /**
+         * The first serval line will check lib
+         * This function need to be run after global initiated 
+         * @return 
+         */
+        public  CommonInputFile getLibraryGenomeGffFile() {
+                if(libGffFile==null){
+                        String fileSeparator=edu.zju.common.CExecutor.getFileSeparator();
+                        String cliVarGenomeGffResource=Config.getItem("CLIN_VAR_GENOME.GFF3");
+                        if(!cliVarGenomeGffResource.contains(fileSeparator)){
+                                cliVarGenomeGffResource=cliVarGenomeGffResource.replace("\\",fileSeparator );
+                        }
+                        String fileName=cliVarGenomeGffResource.split(fileSeparator)[cliVarGenomeGffResource.split(fileSeparator).length-1].trim().replace(".zip", "");
+                        String filePath=edu.zju.options.Init.getRefDirectory()+fileSeparator+fileName;
+                        if(new File(filePath).isFile()){
+                                
+                        }else{
+                                OutputStream out = null;
+                                try {
+                                        String zipPath;
+                                        InputStream in=getClass().getResourceAsStream(Config.getItem("CLIN_VAR_GENOME.GFF3"));
+                                        zipPath=filePath+".zip";
+                                        out = new FileOutputStream(zipPath);
+                                        byte[] buffer =new byte[1024];
+                                        int len;
+                                        while((len=in.read(buffer))>0){
+                                             out.write(buffer, 0, len);
+                                        }
+                                        in.close();
+                                        out.flush();
+                                        out.close();
+                                        new ZipUtil().unzipFiles(new File(zipPath),edu.zju.options.Init.getRefDirectory() );
+                                        new File(zipPath).delete();
+                                        edu.zju.common.CExecutor.println(edu.zju.common.CExecutor.getRunningTime()+"Release file: "+filePath);
+                                } catch (IOException ex) {
+                                        Logger.getLogger(GlobalParameter.class.getName()).log(Level.SEVERE, null, ex);
+                                } 
+                        }
+                        return libGffFile=FileFactory.getInputFile(filePath, "GFF");
+                }
+                return libGffFile;
+        }
+        public static String getLibVarGenomeVersion(){
+                if(libVarGenomeVersion==null){
+                        libVarGenomeVersion=Config.getItem("CLIN_VAR_GENOME_VERSION");
+                }
+                return libVarGenomeVersion.trim();
         }
         public  SampleVariant getClinicalVariant(){
                 CommonInputFile file=null;
-                if(clinicalVariantLibrary.endsWith(Config.getItem("CLIN_VAR_LIB"))){
+                if(clinicalVariantLibrary==null){
                         InputStream is=this.getClass().getResourceAsStream(Config.getItem("CLIN_VAR_LIB"));
                         BufferedReader br=new BufferedReader( new InputStreamReader(is));
                         file=FileFactory.getInputFile(br, "VCF");
@@ -273,7 +334,7 @@ public class GlobalParameter {
                 sb.append("\nVAR_FILTERS:"+filters);
                 sb.append("\nCANDIDATE_CRITERIA:"+getAnticipation());
                 sb.append("\nSNPEFF:"+snpEffPath);
-                if(homosapiensGffFile!=null) sb.append("\nHUMAN_GRCH37_ANNOTATION.GFF:"+homosapiensGffFile.getFilePath());
+                if(libGffFile!=null) sb.append("\nLIB_GENOME_ANNOTATION.GFF:"+libGffFile.getFilePath());
                 sb.append("\nLIB_PHENOTYPE_VAR:"+clinicalVariantLibrary);
                 return sb.toString();
         }
@@ -283,4 +344,5 @@ public class GlobalParameter {
         public int getMaxAASimilarityScore(){
                 return this.maxAAsimilarityScore;
         }
+
 }

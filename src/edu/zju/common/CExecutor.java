@@ -4,7 +4,9 @@ import edu.zju.file.LogFile;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,36 +41,31 @@ public class CExecutor {
          */
         public void execute(String command) {
                 this.writeCommandIntoScript(command);
-                this.excuteCommand();
+                this.executeCommand();
                 new FileHandler().deleteFile(this.scriptPath);
         }
         
         
-        private void excuteCommand() {
+        private void executeCommand() {
                 try {
                         Process ps = null;
                         //file has a function named set executable . see 
                         Runtime.getRuntime().exec("chmod 711 " + this.scriptPath);
                         ps = Runtime.getRuntime().exec(this.scriptPath);
-                        BufferedReader br = new BufferedReader(new InputStreamReader(ps.getInputStream()));
-                        BufferedReader brEeror = new BufferedReader(new InputStreamReader(ps.getErrorStream()));
-                        StringBuffer temp = new StringBuffer();
-                        String line;
-                        while ((line = br.readLine()) != null) {
-                                temp.append(line + '\n');
+                        StreamGobbler errorGobbler=new StreamGobbler(ps.getErrorStream(),"ERROR");
+                        StreamGobbler outGobbler=new StreamGobbler(ps.getInputStream(), "STDOUT");
+                        errorGobbler.start();
+                        outGobbler.start();
+                        //int waitFor() the exit value of the process. By convention, 0 indicates normal termination
+                        int status=ps.waitFor();
+                        if(status!=0){
+                                
                         }
-                        br.close();
-                        resultInf = temp.toString();
-                        temp = new StringBuffer();
-                        while ((line = brEeror.readLine()) != null) {
-                                temp.append(line + '\n');
-                        }
-                        brEeror.close();
-                        erroInf = temp.toString();
-                        temp = null;
+                } catch (InterruptedException ex) {
+                        Logger.getLogger(CExecutor.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (IOException ex) {
                         //Logger.getLogger(CExecutor.class.getName()).log(Level.SEVERE, null, ex);
-                        this.excuteCommand();
+                        this.executeCommand();
                 }
         }
 
@@ -107,9 +104,8 @@ public class CExecutor {
         }
         public static String getCurrentDirectoy() {
                 if (currentDirectory == null) {
-                        String temp = new CExecutor().getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
-                        currentDirectory = new File(temp).getParent().toString().trim();
-                        currentDirectory = currentDirectory.replace(System.getProperty("file.separator") + "build", "");
+                        File directory= new File("");
+                        currentDirectory = directory.getAbsolutePath();
                 }
                 return currentDirectory;
 
@@ -139,4 +135,57 @@ public class CExecutor {
                 LogFile log = new LogFile(getCurrentDirectoy() + System.getProperty("file.separator") + "log.gips");
                 log.write(content);
         }
+        
+        
+
+        /**
+         * 用于处理Runtime.getRuntime().exec产生的错误流及输出流
+         * @author shaojing
+         *
+         */
+        private class StreamGobbler extends Thread {
+                InputStream is;
+                String type;
+
+
+            StreamGobbler(InputStream is, String type) {
+                this.is = is;
+                this.type = type;
+            }
+
+            public void run() {
+                StringBuffer sb=new StringBuffer();
+                InputStreamReader isr = null;
+                BufferedReader br = null;
+                try {
+                    isr = new InputStreamReader(is);
+                    br = new BufferedReader(isr);
+                    String line=null;
+                    while ( (line = br.readLine()) != null) {
+                        //Following line determine wether to print in terminal
+                        //System.out.println(type + ">" + line);
+                        sb.append(line+"\n");
+                    }
+                    erroInf=sb.toString().trim();
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();  
+                } finally{
+                            try {
+                                    br.close();
+                                    isr.close();
+                            } catch (IOException ex) {
+                                    Logger.getLogger(CExecutor.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                }
+            }
+        } 
+
+        
+        
+        
+        
+        
+        
+        
+        
 }

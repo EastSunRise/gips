@@ -1,5 +1,6 @@
 package edu.zju.filter;
 
+import edu.zju.common.CExecutor;
 import edu.zju.genome.effectiveRegion.GeneEffectiveRegion;
 import edu.zju.genome.effectiveRegion.GenomeEffectiveRegion;
 import edu.zju.parameter.SampleParameter;
@@ -70,7 +71,13 @@ public class EffectiveRegionFilter extends FilterSuper{
                   }
                   // find whether snp in gene effective region
                   for(String name:geneNameSet){
-                          GeneEffectiveRegion geneEffectiveRegion=this.genomeEffectiveRegion.getChromosomeEffectiveRegion(chr).get1GeneEffectiveRegionByGeneName(name);
+                          GeneEffectiveRegion geneEffectiveRegion = null;
+                          try {
+                                 geneEffectiveRegion=this.genomeEffectiveRegion.getChromosomeEffectiveRegion(chr).get1GeneEffectiveRegionByGeneName(name);
+                          } catch (Exception e) {
+                                  CExecutor.stopProgram("\nDo not find chromosome "+chr+" in GFF3 file");
+                          }
+                          
                           if(geneEffectiveRegion==null&&this.genomeEffectiveRegion.isInEffectiveRegion(chr, pos)){
                                   isRetained=true;
                                   break;

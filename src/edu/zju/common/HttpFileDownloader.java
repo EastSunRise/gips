@@ -1,13 +1,13 @@
 package edu.zju.common;
 import edu.zju.file.Config;
-import java.io.File; 
+import edu.zju.options.Init; 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
 import java.net.HttpURLConnection;
 import java.net.URL; 
 import java.util.concurrent.TimeoutException;
-import edu.zju.options.Init;
 /**
  *
  ** @author Zhongxu Zhu

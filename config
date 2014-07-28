@@ -10,12 +10,14 @@ AR_VAR_POS:tempPosition
 IntermediateFile:temporary
 
 # correspond with the resoucre name in package
-Test.genome:/resource/snpEffectPredictor_TestGenome.bin
-Test.Project:/resource/Test.zip
+Test.genome:/edu/zju/resource/snpEffectPredictor_TestGenome.bin
+Test.Project:/edu/zju/resource/Test.zip
 
-CLIN_VAR_LIB:/resource/ClinicalVariant.vcf
-
-CLIN_VAR_NAME:HomoSapiensClinSig
+CLIN_VAR_LIB:/edu/zju/resource/ClinicalVariant.vcf
+CLIN_VAR_GENOME.GFF3:/edu/zju/resource/ref_GRCh37.p13.gff3.zip
+CLIN_VAR_GENOME.GFF3_URL:http://ftp.ncbi.nih.gov//genomes/H_sapiens/ARCHIVE/ANNOTATION_RELEASE.105/GFF/ref_GRCh37.p13_top_level.gff3.gz
+CLIN_VAR_NAME:LibVar
+CLIN_VAR_GENOME_VERSION:GRCh37.75
 
 RESULT_GIPS_FILE:RESULT.gips
 

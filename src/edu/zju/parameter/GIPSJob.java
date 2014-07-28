@@ -206,10 +206,10 @@ public class GIPSJob {
                         edu.zju.common.CExecutor.stopProgram("Please set a SnpEff supportive  genome version  in "+Init.getParameterFilePath()
                                 + "\nGenomes are listed in snpeff.sourceforge.net/download.html#dbs\n");
                 }
-                //check homo sapiens gff file
+                //check homo library gff file
                 //download function is not switched on
-                if(this.jobType.equals("gips")&&(GlobalParameter.getHomoSapiensGenomeGffFile()==null)){
-                        edu.zju.common.CExecutor.stopProgram("Please set HUMAN_GRCH37_ANNOTATION.GFF"
+                if(this.jobType.equals("gips")&&(new GlobalParameter().getLibraryGenomeGffFile()==null)){
+                        edu.zju.common.CExecutor.stopProgram("Please set LIB_GENOME_ANNOTATION.GFF"
                                 + "\nFile is available in "+Config.getItem("H_SAPIENS.GFF")
                                 +"\nDownload and gunzip this file"
                                 + "\nIt is recommended for user to put this file into "+Init.getRefDirectory()+"\n");
@@ -220,10 +220,10 @@ public class GIPSJob {
 //                                + "\n"+ localFilePath);
 //                        hfd.download("http://"+Config.getItem("H_SAPIENS.GFF"), localFilePath);
 //                        new GZipUtil().doUncompressFile(localFilePath);
-//                        common.CExecutor.println("Set HUMAN_GRCH37_ANNOTATION.GFF variable in "+Init.getParameterFilePath()+" :Done"
+//                        common.CExecutor.println("Set LIB_GENOME_ANNOTATION.GFF variable in "+Init.getParameterFilePath()+" :Done"
 //                                + "\n");
-//                        new IniFile(Init.getParameterFilePath()).setItemInfo("HUMAN_GRCH37_ANNOTATION.GFF", localFilePath.replace(".gz", ""));
-//                        common.CExecutor.println("Set HUMAN_GRCH37_ANNOTATION.GFF variable in "+Init.getParameterFilePath()+" :Done");
+//                        new IniFile(Init.getParameterFilePath()).setItemInfo("LIB_GENOME_ANNOTATION.GFF", localFilePath.replace(".gz", ""));
+//                        common.CExecutor.println("Set LIB_GENOME_ANNOTATION.GFF variable in "+Init.getParameterFilePath()+" :Done");
                 }
                 if((this.jobType.equals("vcs")||this.jobType.equals("gips"))&&GlobalParameter.getSampleGffFile()==null){
                         edu.zju.common.CExecutor.stopProgram("Please set GFF file path for "+GlobalParameter.getGenomeVersion()+'\n');

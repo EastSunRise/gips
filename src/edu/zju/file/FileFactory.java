@@ -27,7 +27,7 @@ public class FileFactory {
                         CommonInputFile commonFile = null;
                      try {
                                 try {
-                                        commonFile=(CommonInputFile)Class.forName("file."+type).getConstructor(String.class).newInstance(path);
+                                        commonFile=(CommonInputFile)Class.forName("edu.zju.file."+type).getConstructor(String.class).newInstance(path);
                                 } catch (ClassNotFoundException ex) {
                                         Logger.getLogger(FileFactory.class.getName()).log(Level.SEVERE, null, ex);
                                 }
@@ -55,7 +55,7 @@ public class FileFactory {
                 try {
                         CommonInputFile commonFile;
                         String fakePath=Config.getItem("FAKE_PAHT");
-                        commonFile=(CommonInputFile)Class.forName("file."+type).getConstructor(String.class,BufferedReader.class).newInstance(fakePath,br);
+                        commonFile=(CommonInputFile)Class.forName("edu.zju.file."+type).getConstructor(String.class,BufferedReader.class).newInstance(fakePath,br);
                         return commonFile;
                 } catch (InstantiationException ex) {
                         Logger.getLogger(FileFactory.class.getName()).log(Level.SEVERE, null, ex);

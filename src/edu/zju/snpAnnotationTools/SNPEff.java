@@ -3,6 +3,7 @@ package edu.zju.snpAnnotationTools;
 import edu.zju.common.CExecutor;
 import edu.zju.common.FileHandler;
 import edu.zju.common.LineHandler;
+import edu.zju.common.ZipUtil;
 import edu.zju.file.AbstractFile;
 import edu.zju.file.CommonInputFile;
 import edu.zju.file.Config;
@@ -28,6 +29,7 @@ import java.io.OutputStreamWriter;
 import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.zip.ZipException;
 
 /**
  *
@@ -41,7 +43,6 @@ public class SNPEff extends edu.zju.snpAnnotationTools.SNPAnnotationTool {
         private HashSet<String> pastEff;
         private String sampleName;
         private String genomeVersion;
-
         /**
          * Impact Effects High SPLICE_SITE_ACCEPTOR SPLICE_SITE_DONOR START_LOST
          * EXON_DELETED FRAME_SHIFT STOP_GAINED STOP_LOST RARE_AMINO_ACID
@@ -152,7 +153,7 @@ public class SNPEff extends edu.zju.snpAnnotationTools.SNPAnnotationTool {
                         }
                 }
                 String targetPath = SampleParameterBag.getIntermediateFilePath() + System.getProperty("file.separator") + sampleName + System.getProperty("file.separator") + sampleName + ".eff.vcf";
-                this.annotateSampleVcfFile(file.getFilePath(), targetPath);
+                targetPath=this.annotateSampleVcfFile(file.getFilePath(), targetPath);
                 return FileFactory.getInputFile(targetPath, "VCF");
         }
 
@@ -206,34 +207,46 @@ public class SNPEff extends edu.zju.snpAnnotationTools.SNPAnnotationTool {
                 return snp;
         }
 
-        private void annotateSampleVcfFile(String vcfPath, String targetFilePath) {
+        private String annotateSampleVcfFile(String vcfPath, String targetFilePath)  {
                 if(GlobalParameter.getGenomeVersion().equals("Test")){
                         this.addGIPSTestInfoIntoSnpEffConfig();
                 }
                 edu.zju.common.CExecutor executor = new CExecutor();
-                this.genomeVersion = GlobalParameter.getGenomeVersion();
-//                common.CExecutor.println("");
-//                common.CExecutor.println("SNPEff runing info(" + this.sampleName + "):");
-//                common.CExecutor.println("SnpEff start running");
-                executor.execute("cd " + this.snpEffPath + "\n java -jar " + this.snpEffPath + System.getProperty("file.separator") + "snpEff.jar eff -no-downstream -no-upstream -1 -no-intergenic -no-intron -v " + this.genomeVersion + " " + vcfPath + "  > " + targetFilePath + '\n');
-
+                if(this.sampleName.equals(Config.getItem("CLIN_VAR_NAME").trim())){
+                        targetFilePath=vcfPath.replace(".vcf", ".eff.vcf");
+                        if(new File(targetFilePath).exists()){
+                                return targetFilePath;
+                        }
+                        this.genomeVersion=GlobalParameter.getLibVarGenomeVersion();
+               }else{
+                        this.genomeVersion = GlobalParameter.getGenomeVersion();
+                }
+                executor.execute("cd " + this.snpEffPath + "\n java -Xmx4G -jar " + this.snpEffPath + System.getProperty("file.separator") + "snpEff.jar eff -no-downstream -no-upstream -1 -no-intergenic -no-intron -v " + this.genomeVersion + " " + vcfPath + "  > " + targetFilePath + '\n');
                 String erroInf = executor.getErroInformation();
                 if (erroInf.contains("ERROR: Cannot read file ") && erroInf.contains("snpEffectPredictor.bin")) {
-                        System.out.println(erroInf);
                         edu.zju.common.CExecutor.println(edu.zju.common.CExecutor.getRunningTime()+"SNPEff is downloading genome " + this.genomeVersion + " data");
                         this.downloadGenome();
-                        executor.execute("cd " + this.snpEffPath + "\n java -jar " + this.snpEffPath + System.getProperty("file.separator") + "snpEff.jar eff -no-downstream -no-upstream -1 -no-intergenic -no-intron -v " + this.genomeVersion + " " + vcfPath + "  > " + targetFilePath + '\n');
+                        executor.execute("cd " + this.snpEffPath + "\n java -jar -Xmx4G " + this.snpEffPath + System.getProperty("file.separator") + "snpEff.jar eff -no-downstream -no-upstream -1 -no-intergenic -no-intron -v " + this.genomeVersion + " " + vcfPath + "  > " + targetFilePath + '\n');
                 } else  if (erroInf.contains("genome' not found")) {
                         CExecutor.stopProgram("Genome not found, please verify in SnpEff website snpeff.sourceforge.net/download.html");
+                } else if(erroInf.contains("OutOfMemoryError")){
+                        executor.execute("cd " + this.snpEffPath + "\n java -Xmx5G -jar " + this.snpEffPath + System.getProperty("file.separator") + "snpEff.jar eff -no-downstream -no-upstream -1 -no-intergenic -no-intron -v " + this.genomeVersion + " " + vcfPath + "  > " + targetFilePath + '\n');
+                        if(executor.getErroInformation().contains("OutOfMemoryErro")){
+                             CExecutor.stopProgram("Out of meory error occurs for snpeff.jar\nPlease run the following command, set the file path in sample specific section and rerun GIPS\n"
+                                + "cd " + this.snpEffPath + "\n java -jar " + this.snpEffPath + System.getProperty("file.separator") + "snpEff.jar eff -no-downstream -no-upstream -1 -no-intergenic -no-intron -v " + this.genomeVersion + " " + vcfPath + "  > " + targetFilePath);   
+                        }
+                } else{
+                        //CExecutor.print(erroInf);
                 }
+                return targetFilePath;
         }
+        
         //must cd first
-
         private void downloadGenome() {
                 edu.zju.common.CExecutor executor = new CExecutor();
                 FileFolder folder = new FileFolder(this.snpEffPath);
                 AbstractFile temp1[] = folder.getAllFile();
-                if(GlobalParameter.getGenomeVersion().trim().equals("Test")){
+                if(this.genomeVersion.trim().equals("Test")){
                         this.addTestGenomeDatabase();
                 }else{  
                         this.printNote();
@@ -264,6 +277,28 @@ public class SNPEff extends edu.zju.snpAnnotationTools.SNPAnnotationTool {
         }
 
         private void unzipGenomeToDataFile(String path) {
+                try {
+                        String snpEffDataPath = this.getSNPEffData_dir();
+                        if (!new File(snpEffDataPath).isDirectory()) {
+                                new File(snpEffDataPath).mkdirs();
+                        }
+                        new ZipUtil().unzipFiles(new File(path),new File(snpEffDataPath).getParentFile().getAbsolutePath());
+                        
+                } catch (ZipException ex) {
+                        edu.zju.common.CExecutor.stopProgram("Failt unzip "+path);
+                        Logger.getLogger(SNPEff.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                        edu.zju.common.CExecutor.stopProgram("Failt unzip "+path);
+                        Logger.getLogger(SNPEff.class.getName()).log(Level.SEVERE, null, ex);
+                }        
+        }
+
+        private void printNote() {
+                edu.zju.common.CExecutor.println("This process may take for a while, but if the download has not been finished for a long tiem, please stop GIPS and execut the following command:\n"
+                        + "cd " + this.snpEffPath + "\njava -jar " + this.snpEffPath + System.getProperty("file.separator") + "snpEff.jar" + " download " + this.genomeVersion + '\n'
+                        + "Don't not forget unzip the file and rerun GIPS.");
+        }
+        private String getSNPEffData_dir(){
                 String snpEffConfigFilePath = this.snpEffPath + System.getProperty("file.separator") + "snpEff.config";
                 File file = new File(snpEffConfigFilePath);
                 if (!file.isFile()) {
@@ -278,27 +313,17 @@ public class SNPEff extends edu.zju.snpAnnotationTools.SNPAnnotationTool {
                                         break;
                                 }
                         }
+                        fileHandler.br.close();
                 } catch (IOException ex) {
                         Logger.getLogger(SNPEff.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 String snpEffDataPath = line.split("=")[1].trim();
-                if (!new File(snpEffDataPath).isDirectory()) {
-                        new File(snpEffDataPath).mkdirs();
+                if(snpEffDataPath.startsWith(CExecutor.getFileSeparator())){
+                }else{
+                        snpEffDataPath=this.snpEffPath+CExecutor.getFileSeparator()+snpEffDataPath;
                 }
-                CExecutor executor = new CExecutor();
-                executor.execute("cd " + snpEffDataPath + "\nunzip " + path + "\n");
-//not rm the file              
-                executor.execute("cd " + snpEffDataPath + "\ncd data\nmv " + this.genomeVersion + " " + snpEffDataPath + "\ncd " + snpEffDataPath + "\n");
-//rm the file              
-//              executor.execute("cd "+snpEffDataPath+"\ncd data\nmv "+this.genomeVersion+" "+snpEffDataPath+"\ncd "+snpEffDataPath+"\nrm -r data\n");
+                return snpEffDataPath;
         }
-
-        private void printNote() {
-                edu.zju.common.CExecutor.println("This process may take for a while, but if the download has not been finished for a long tiem, please stop GIPS and execut the following command:\n"
-                        + "cd " + this.snpEffPath + "\njava -jar " + this.snpEffPath + System.getProperty("file.separator") + "snpEff.jar" + " download " + this.genomeVersion + '\n'
-                        + "Don't not forget unzip the file and rerun GIPS.");
-        }
-        
         private void addTestGenomeDatabase(){
                 String snpEffFolderPath=GlobalParameter.getSNPEffPath();
                 String snpEffDataFolderPath=snpEffFolderPath+System.getProperty("file.separator")+"data";
@@ -314,7 +339,7 @@ public class SNPEff extends edu.zju.snpAnnotationTools.SNPAnnotationTool {
                         
                 }
                 //mkdir /data/Test
-                String testFolderPath=snpEffDataFolderPath+System.getProperty("file.separator")+GlobalParameter.getGenomeVersion();
+                String testFolderPath=this.getSNPEffData_dir()+System.getProperty("file.separator")+GlobalParameter.getGenomeVersion();
                 File testFolder=new File(testFolderPath);
                 if(!testFolder.isDirectory()){
                         boolean b=testFolder.mkdirs();

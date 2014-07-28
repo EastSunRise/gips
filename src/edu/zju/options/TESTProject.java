@@ -1,5 +1,6 @@
 package edu.zju.options;
 
+import edu.zju.common.CExecutor;
 import edu.zju.common.ZipUtil;
 import edu.zju.file.CommonOutputFile;
 import edu.zju.file.Config;
@@ -32,6 +33,9 @@ public class TESTProject {
              in.close();
              out.flush();
              out.close();
+             if(new File(projectString).exists()){
+                     CExecutor.stopProgram("Project Test already exist");
+             }
              new ZipUtil().unzipFiles(new File(zipPath), projectString);
              new File(zipPath).delete();
              projectString=projectString+edu.zju.common.CExecutor.getFileSeparator()+"Test";
@@ -45,17 +49,15 @@ public class TESTProject {
              String s=edu.zju.common.CExecutor.getFileSeparator();
              iniOutFile.write("[GLOBAL]"
                      + "\nPROJECT        : Test"
+                     + "\nREF_GENOME_ANNOTATION.GFF: "+Init.getRefDirectory()+s+"Test.gff3"
                      + "\nSNPEFF_GENOME_VERSION    : Test"
                      + "\nSNPEFF :                     #/path/to/snpefffolder"
-                     + "\nREF_GENOME_ANNOTATION.GFF: "+Init.getRefDirectory()+s+"Test.gff3"
-                     + "\nHUMAN_GRCH37_ANNOTATION.GFF :"
                      + "\nVAR_CALL_SCRIPT:"+Init.getScriptDirectory()+s+"samtools_Q13q30_script"
                      + "\nEFF_REGION   : CDS|SpliceSite=2"
                      + "\nVAR_FILTERS  : EBA"
                      + "\nSCORE_MATRIX : DEFAULT"
                      + "\nCANDIDATE_CRITERIA :"
                      + "\nNUM_SIM_SNPS : 800 "
-                     + "\nLIB_PHENOTYPE_VAR :"+edu.zju.common.CExecutor.getCurrentDirectoy()+s+"GIPS.jar"+Config.getItem("CLIN_VAR_LIB")
                      + "\n\n[SAMPLE_LIST]\nsample1\nsample2\nsample3"
                      + "\n\n[SAMPLE]\nSAMPLE_NAME :sample1\nSAMPLE.VCF :"+Init.getDataDirectory()+s+"sample1"+s+"sample1.vcf\nREADS_ALIGNMENT.SAM :"+Init.getDataDirectory()+s+"sample1"+s+"sample1.sam"
                      + "\n\n[SAMPLE]\nSAMPLE_NAME :sample2\nSAMPLE.VCF :"+Init.getDataDirectory()+s+"sample2"+s+"sample2.vcf\nREADS_ALIGNMENT.SAM :"+Init.getDataDirectory()+s+"sample2"+s+"sample2.sam"
@@ -70,8 +72,6 @@ public class TESTProject {
                      + "\n# Samtools is avalible in Samtools.sourceforge.net"
                      + "\n# Please make sure path of SNPEFF folder has been set in "+Init.getParameterFilePath()
                      + "\n# SnpEff is avalible in snpeff.sourceforge.net"
-                     + "\n# Please set Homo Sapiens GFF3 file in PROJECT.ini file."
-                     + "\n# Homo Sapiens GFF3 file is avalible in ftp://ftp.ncbi.nih.gov//genomes/H_sapiens/ARCHIVE/ANNOTATION_RELEASE.105/GFF/ref_GRCh37.p13_top_level.gff3.gz"
                      + "\n# Detail information to configure before GIPS running, see Test/README file."
                      + "\n######################################################";
 
