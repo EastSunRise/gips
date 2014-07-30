@@ -75,7 +75,6 @@ public class SampleParameter {
                                                 info=Init.getDataDirectory()+edu.zju.common.CExecutor.getFileSeparator()+info;
                                         }
                                         this.setVCFFile(FileFactory.getInputFile(info, "VCF"));
-                                        this.vcf_md5=this.getVCFFile().getFileMD5();
                                         break;
                                 }
                                 case "READS_ALIGNMENT.SAM" :{
@@ -83,7 +82,6 @@ public class SampleParameter {
                                                 info=Init.getDataDirectory()+edu.zju.common.CExecutor.getFileSeparator()+info;
                                         }
                                         this.sequenceReadsFile=FileFactory.getInputFile(info, "SAM");
-                                        this.sam_md5=this.sequenceReadsFile.getFileMD5();
                                         break;
                                 }
                                 case "SPECIFY_HOMO_VDS" :{
@@ -100,7 +98,6 @@ public class SampleParameter {
                                         if(!info.contains(edu.zju.common.CExecutor.getFileSeparator())){
                                                 info=Init.getScriptDirectory()+edu.zju.common.CExecutor.getFileSeparator()+info;
                                         }
-                                        this.script_md5=new CommonInputFile(info).getFileMD5();
                                         this.callerScript=info;
                                         break;
                                 }           
@@ -364,15 +361,33 @@ public class SampleParameter {
                 return (this.isSpecifyBVF||this.isSpecifyHeteroVariantDetectionSensitivity||this.isSpecifyHomoVariantDetectionSensitivity);
         } 
         String getVCFMd5(){
-                if(this.vcf_md5==null) return "no md5";
+                if(this.vcf_md5==null){
+                        if(this.vcfFile==null){
+                                return "no md5";
+                        }else{
+                                this.vcf_md5=this.vcfFile.getFileMD5();
+                        }
+                }
                 return this.vcf_md5;
         }
         String getSAMMd5(){
-                if(this.sam_md5==null) return "no md5";
+                if(this.sam_md5==null) {
+                        if(this.sequenceReadsFile==null){
+                                return "no md5";
+                        }else{
+                                this.sam_md5=this.sequenceReadsFile.getFileMD5();
+                        }
+                }
                 return this.sam_md5;
         }
         String getScriptMd5(){
-                if(this.script_md5==null) return "no md5";
+                if(this.script_md5==null) {
+                        if(this.callerScript==null){
+                                return "no md5";
+                        }else{
+                                this.script_md5= new CommonInputFile(this.callerScript).getFileMD5();
+                        }
+                }
                 return this.script_md5;
         }
         public int getMaxAASimilarityScore(){

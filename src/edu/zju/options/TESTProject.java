@@ -22,8 +22,11 @@ public class TESTProject {
              if(projectString==null||projectString.trim().isEmpty()){
                      edu.zju.common.CExecutor.stopProgram("Please set Test project's path");
              }
+             if(new File(projectString+CExecutor.getFileSeparator()+"Test").exists()){
+                     CExecutor.stopProgram("Project Test already exist");
+             }
              InputStream in=this.getClass().getResourceAsStream(Config.getItem("Test.Project"));
-             String zipPath=edu.zju.common.CExecutor.getCurrentDirectoy()+edu.zju.common.CExecutor.getFileSeparator()+"Test.zip";
+             String zipPath=edu.zju.common.CExecutor.getTerminalDirectoy()+edu.zju.common.CExecutor.getFileSeparator()+"Test.zip";
              OutputStream out = new FileOutputStream(zipPath);
              byte[] buffer =new byte[1024];
              int len;
@@ -33,9 +36,6 @@ public class TESTProject {
              in.close();
              out.flush();
              out.close();
-             if(new File(projectString).exists()){
-                     CExecutor.stopProgram("Project Test already exist");
-             }
              new ZipUtil().unzipFiles(new File(zipPath), projectString);
              new File(zipPath).delete();
              projectString=projectString+edu.zju.common.CExecutor.getFileSeparator()+"Test";
@@ -54,7 +54,7 @@ public class TESTProject {
                      + "\nSNPEFF :                     #/path/to/snpefffolder"
                      + "\nVAR_CALL_SCRIPT:"+Init.getScriptDirectory()+s+"samtools_Q13q30_script"
                      + "\nEFF_REGION   : CDS|SpliceSite=2"
-                     + "\nVAR_FILTERS  : EBA"
+                     + "\nVAR_FILTERS  : BA"
                      + "\nSCORE_MATRIX : DEFAULT"
                      + "\nCANDIDATE_CRITERIA :"
                      + "\nNUM_SIM_SNPS : 800 "

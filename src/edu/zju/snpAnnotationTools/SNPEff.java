@@ -214,23 +214,27 @@ public class SNPEff extends edu.zju.snpAnnotationTools.SNPAnnotationTool {
                 edu.zju.common.CExecutor executor = new CExecutor();
                 if(this.sampleName.equals(Config.getItem("CLIN_VAR_NAME").trim())){
                         targetFilePath=vcfPath.replace(".vcf", ".eff.vcf");
-                        if(new File(targetFilePath).exists()){
-                                return targetFilePath;
-                        }
+                        
                         this.genomeVersion=GlobalParameter.getLibVarGenomeVersion();
                }else{
                         this.genomeVersion = GlobalParameter.getGenomeVersion();
-                }
+               }
+                //If the eff file already exist, return directly
+               if(new File(targetFilePath).exists()){
+                         if(this.compareTwoFiles(vcfPath, targetFilePath)){
+                                return targetFilePath;
+                         }
+               }
                 executor.execute("cd " + this.snpEffPath + "\n java -Xmx4G -jar " + this.snpEffPath + System.getProperty("file.separator") + "snpEff.jar eff -no-downstream -no-upstream -1 -no-intergenic -no-intron -v " + this.genomeVersion + " " + vcfPath + "  > " + targetFilePath + '\n');
                 String erroInf = executor.getErroInformation();
                 if (erroInf.contains("ERROR: Cannot read file ") && erroInf.contains("snpEffectPredictor.bin")) {
                         edu.zju.common.CExecutor.println(edu.zju.common.CExecutor.getRunningTime()+"SNPEff is downloading genome " + this.genomeVersion + " data");
                         this.downloadGenome();
-                        executor.execute("cd " + this.snpEffPath + "\n java -jar -Xmx4G " + this.snpEffPath + System.getProperty("file.separator") + "snpEff.jar eff -no-downstream -no-upstream -1 -no-intergenic -no-intron -v " + this.genomeVersion + " " + vcfPath + "  > " + targetFilePath + '\n');
+                        executor.execute("cd " + this.snpEffPath + "\n java -jar -Xmx5G " + this.snpEffPath + System.getProperty("file.separator") + "snpEff.jar eff -no-downstream -no-upstream -1 -no-intergenic -no-intron -v " + this.genomeVersion + " " + vcfPath + "  > " + targetFilePath + '\n');
                 } else  if (erroInf.contains("genome' not found")) {
                         CExecutor.stopProgram("Genome not found, please verify in SnpEff website snpeff.sourceforge.net/download.html");
                 } else if(erroInf.contains("OutOfMemoryError")){
-                        executor.execute("cd " + this.snpEffPath + "\n java -Xmx5G -jar " + this.snpEffPath + System.getProperty("file.separator") + "snpEff.jar eff -no-downstream -no-upstream -1 -no-intergenic -no-intron -v " + this.genomeVersion + " " + vcfPath + "  > " + targetFilePath + '\n');
+                        executor.execute("cd " + this.snpEffPath + "\n java -Xmx6G -jar " + this.snpEffPath + System.getProperty("file.separator") + "snpEff.jar eff -no-downstream -no-upstream -1 -no-intergenic -no-intron -v " + this.genomeVersion + " " + vcfPath + "  > " + targetFilePath + '\n');
                         if(executor.getErroInformation().contains("OutOfMemoryErro")){
                              CExecutor.stopProgram("Out of meory error occurs for snpeff.jar\nPlease run the following command, set the file path in sample specific section and rerun GIPS\n"
                                 + "cd " + this.snpEffPath + "\n java -jar " + this.snpEffPath + System.getProperty("file.separator") + "snpEff.jar eff -no-downstream -no-upstream -1 -no-intergenic -no-intron -v " + this.genomeVersion + " " + vcfPath + "  > " + targetFilePath);   
@@ -241,7 +245,10 @@ public class SNPEff extends edu.zju.snpAnnotationTools.SNPAnnotationTool {
                 return targetFilePath;
         }
         
-        //must cd first
+        /**
+         * must cd first
+         * 
+        */
         private void downloadGenome() {
                 edu.zju.common.CExecutor executor = new CExecutor();
                 FileFolder folder = new FileFolder(this.snpEffPath);
@@ -408,5 +415,35 @@ public class SNPEff extends edu.zju.snpAnnotationTools.SNPAnnotationTool {
                         }
                 }
         }
+        
+        /**
+         * 
+         * @param vcfPath
+         * @param snpEffFilePath
+         * @return 
+         */
+        private boolean compareTwoFiles(String vcfPath,String snpEffFilePath){
+                int number=0;
+                CommonInputFile file=FileFactory.getInputFile(vcfPath, "VCF");
+                String line;
+                //count how many snps in vcf
+                while((line=file.readLine())!=null){
+                        if(line.startsWith("#"))continue;
+                        number++;
+                }
+                file.closeInput();
+                //count how many snps in eff.vcf
+                file=FileFactory.getInputFile(snpEffFilePath, "VCF");
+                while((line=file.readLine())!=null){
+                        if(line.startsWith("#"))continue;
+                        number--;
+                }
+                file.closeInput();
+                if(number>=-2&&number<=2){
+                        return true;
+                }
+                return false;
+        }
+        
 
 }

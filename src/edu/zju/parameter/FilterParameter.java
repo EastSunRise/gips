@@ -45,11 +45,11 @@ public class FilterParameter {
                 if (this.filterStrategy.contains("EffectiveRegion")) {
                         filters.add(new EffectiveRegionFilter(this.getGenomeEffectiveRegion(), "EffectiveRegion"));
                 }
-                if (this.filterStrategy.contains("Congestion")) {
-                        filters.add(new CongestionFilter("Congestion"));
-                }
                 if (this.filterStrategy.contains("BigDifference")) {
                         filters.add(new BigDifferenceFilter("BigDifference"));
+                }
+                if (this.filterStrategy.contains("Congestion")) {
+                        filters.add(new CongestionFilter("Congestion"));
                 }
                 //Control filter must be added, but maybe not used in real variant filtration
                 filters.add(new ControlFilter("Control",this.controlFilterMode));
@@ -58,9 +58,7 @@ public class FilterParameter {
 
         public void setFilterStrategy(String info) {
                 info=info.replace("|", "");
-                if (GlobalParameter.getToolType().equals("gips") && !info.contains("E")) {
-                        info = info + "E";
-                }
+                info=info+"E";
                 StringBuffer stringTemp = new StringBuffer();
                 if (info.contains("A")) {
                         stringTemp.append("A");

@@ -6,7 +6,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,8 +26,7 @@ public class CExecutor {
                 
         public CExecutor() {
                 // Get current address and initiate a script for execute
-                this.scriptPath = getCurrentDirectoy()+getFileSeparator() + ".script.sh";
-               
+                this.scriptPath = getTerminalDirectoy()+getFileSeparator() + ".script.sh";
         }
 
         /**
@@ -96,13 +94,10 @@ public class CExecutor {
                 return this.erroInf;
         }
 
-        public String getResultInformation() {
-                return this.resultInf;
-        }
         public static String getFileSeparator(){
                 return System.getProperty("file.separator");
         }
-        public static String getCurrentDirectoy() {
+        public static String getTerminalDirectoy() {
                 if (currentDirectory == null) {
                         File directory= new File("");
                         currentDirectory = directory.getAbsolutePath();
@@ -110,7 +105,18 @@ public class CExecutor {
                 return currentDirectory;
 
         }
+        /**
+         * only used to find config file path and log file path
+        */
+        public String getGIPSDirectoy() {
+                String path=new ZipUtil().getClass().getProtectionDomain().getCodeSource().getLocation().toString();
+                //if in IDE show /path/to/NetBeansProjects/GIPS/build/classes/
+                path=path.replace("file:", "").replace("/build/classes/", "");
+                //if in jar package, show /path/to/GIPS.jar
+                path=path.replace("/GIPS.jar", "");
+                return path;
 
+        }        
         public static String getRunningTime() {
                 if(processStartTime==0){
                         processStartTime=System.currentTimeMillis();
@@ -127,12 +133,12 @@ public class CExecutor {
         }
         public static void println(String content) {
                 System.out.println(content);
-                LogFile log = new LogFile(getCurrentDirectoy() + System.getProperty("file.separator") + "log.gips");
+                LogFile log = new LogFile(new CExecutor().getGIPSDirectoy() + System.getProperty("file.separator") + "log.gips");
                 log.write(content + "\n");
         }
         public static void print(String content){
                 System.out.print(content);
-                LogFile log = new LogFile(getCurrentDirectoy() + System.getProperty("file.separator") + "log.gips");
+                LogFile log = new LogFile(new CExecutor().getGIPSDirectoy() + System.getProperty("file.separator") + "log.gips");
                 log.write(content);
         }
         
@@ -166,7 +172,12 @@ public class CExecutor {
                         //System.out.println(type + ">" + line);
                         sb.append(line+"\n");
                     }
-                    erroInf=sb.toString().trim();
+                    if(this.type.equals("ERROR")){
+                            erroInf=sb.toString().trim();
+                    }
+                    if(this.type.equals("STDOUT")){
+                            resultInf=sb.toString().trim();
+                    }
                 } catch (IOException ioe) {
                     ioe.printStackTrace();  
                 } finally{

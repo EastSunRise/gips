@@ -34,6 +34,7 @@ public class GIPSJob {
                 this.sampleParameterBag=sampleParameterBag;
                 if(this.update){
                         this.updateSampleForIterating(Init.getWorkingDirectroy()+edu.zju.common.CExecutor.getFileSeparator()+Config.getItem("RESULT_GIPS_FILE"));
+                        this.update=false;
                 }
         }
         public GlobalParameter getGlobalParameter(){
@@ -87,7 +88,6 @@ public class GIPSJob {
                 }
                 String item = null,info=null;
                 while((line=br.readLine())!=null){
-                        
                         if(line.startsWith("#")||line.trim().isEmpty()){
                                 continue;
                         }
@@ -122,18 +122,19 @@ public class GIPSJob {
                         SampleParameter s1=current.getSample(sample);
                         SampleParameter s2=traceback.getSample(sample);
                         try {
-                                b1=s1.getVCFFile().getFileMD5().equals(s2.getVCFFile().getFileMD5());
+                                b1=s1.getVCFMd5().equals(s2.getVCFMd5());
+                                System.out.println(s1.getVCFMd5());
+                                System.out.println(s2.getVCFMd5());
                         } catch (Exception e) {
                         }
                         try {
-                                b2=s1.getSequenceReadsFile().getFileMD5().equals(s2.getSequenceReadsFile().getFileMD5());
+                                b2=s1.getSAMMd5().equals(s2.getSAMMd5());
                         } catch (Exception e) {
                         }
                         try {
-                                b3=new CommonInputFile(s1.getCallerScript()).getFileMD5().equals(new CommonInputFile(s2.getCallerScript()).getFileMD5());
+                                b3=s1.getScriptMd5().equals(s2.getScriptMd5());
                         } catch (Exception e) {
                         }
-                        boolean isCallerProtocolUpdate=false;
                         //vcf is sure to change
                         if(!b1){
                                if(!b2||!b3){

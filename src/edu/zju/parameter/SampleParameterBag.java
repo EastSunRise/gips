@@ -280,9 +280,9 @@ public class SampleParameterBag {
                                 sb.append("\nCONTROL:"+sampleParameter.getControlFile().getFilePath());
                         } catch (Exception e) {
                         }
-                        sb.append("\nSCRIPT_MD5:"+sampleParameter.getSAMMd5());
+                        sb.append("\nSCRIPT_MD5:"+sampleParameter.getScriptMd5());
                         sb.append("\nVCF_MD5:"+sampleParameter.getVCFMd5());
-                        sb.append("\nSAM_MD5:"+sampleParameter.getScriptMd5());
+                        sb.append("\nSAM_MD5:"+sampleParameter.getSAMMd5());
                         sb.append("\nNUM_SIM_SNPS:"+sampleParameter.getArtificialSNPNumber());
                         sb.append("\nMAX_VAR_DENSITY:"+sampleParameter.getSNPDensity());
                         sb.append("\nESTIMATED_BVF:"+sampleParameter.getBackgroundMutationRateEstimated());

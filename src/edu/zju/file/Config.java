@@ -5,6 +5,7 @@
 package edu.zju.file;
 
 import edu.zju.common.CExecutor;
+import java.io.File;
 import java.util.HashMap;
 
 /**
@@ -12,10 +13,13 @@ import java.util.HashMap;
  ** @author Zhongxu Zhu
  */
 public class Config {
-        public static final String path=CExecutor.getCurrentDirectoy()+System.getProperty("file.separator")+"config";
+        public static final String path=new CExecutor().getGIPSDirectoy()+System.getProperty("file.separator")+"config";
         private static final CommonInputFile inputFile=new CommonInputFile(path);
         
         public static String getItem(String item){
+                if(!new File(path).isFile()){
+                        CExecutor.stopProgram("Error: Do not find config file in /path/to/GIPS_folder/");
+                }
                 if(!inputFile.isFile()){
                         edu.zju.common.CExecutor.stopProgram("GIPS config file can't find. Please check whether GIPS.jar and config are in the same directory");
                 }

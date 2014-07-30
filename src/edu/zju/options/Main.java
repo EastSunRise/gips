@@ -48,7 +48,7 @@ public class Main {
                                 }
                                 case "-Test" :{
                                         TESTProject testp=new TESTProject();
-                                        testp.initiateTestProject(edu.zju.common.CExecutor.getCurrentDirectoy());
+                                        testp.initiateTestProject(edu.zju.common.CExecutor.getTerminalDirectoy());
                                         job.setJobType("Test");
                                         break;
                                 }
@@ -73,7 +73,6 @@ public class Main {
                 job=gips.gipsRun();
                 ResultOutputer ro=new ResultOutputer(job);
                 ro.outputResult();
-                
         }
 
 }

@@ -34,7 +34,13 @@ public class SNPCaller {
                 String samPath=this.artificialReadsFile.getFilePath();
                 String vcfPath=this.sampleIntermediateFileFolderPath + System.getProperty("file.separator") + Config.getItem("AR_VAR.VCF");
                 executor.execute(this.callerScript+" "+samPath+" "+vcfPath);
-                String errorInfo=executor.getErroInformation().replace("\n\n", "\n");
+                String errorInfo;
+                try {
+                         errorInfo=executor.getErroInformation().replace("\n\n", "\n");
+                } catch (Exception e) {
+                        errorInfo="NULL";
+                }
+                
                 if(errorInfo.contains("Permission denied")){
                         executor.execute("chmod 755 "+this.callerScript);
                         edu.zju.common.CExecutor.println(edu.zju.common.CExecutor.getRunningTime()+"chmod 755 "+this.callerScript);
@@ -43,8 +49,10 @@ public class SNPCaller {
                         edu.zju.common.CExecutor.println(errorInfo);
 
                 }else{
-                        edu.zju.common.CExecutor.println(errorInfo);
-
+                        if(errorInfo.equals("NULL")){
+                        }else{
+                                edu.zju.common.CExecutor.println(errorInfo);
+                        }
                 }
                 CommonInputFile file = FileFactory.getInputFile(vcfPath, "VCF");
                 return file;
