@@ -34,7 +34,7 @@ public class HelpOption {
                         + "\n java -jar -T gips -p example"
                         + "\n"
                         + "\n update protocol for optimization"
-                        + "\n java -jar -T gips -update sample1 -p"
+                        + "\n java -jar -T gips -update -p example"
                         + "\n"
                         + "\n******NOTES******"
                         + "\n* When a project initiated, please configure the PROJECT.ini file"
