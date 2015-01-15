@@ -64,7 +64,11 @@ public class ParameterLoader {
                             edu.zju.common.CExecutor.stopProgram("Repeat sample name "+line);    
                         }
                 }
-                if(sampleNamelist.size()==0)return null;
+                if(sampleNamelist.size()==0){
+                        return null;
+                }else{//please note, setSampleNumber function is just invoked once in GIPS process
+                        SampleParameterBag.setSampleNumber(sampleNamelist.size());
+                }
                 //set sample number in global parameter
                 GlobalParameter.setSampleNumber(sampleNames.size());
                 String item = null,info=null;

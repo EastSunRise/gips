@@ -46,14 +46,14 @@ public class SampleGene extends edu.zju.genome.abstractGenome.Gene {
                 return NumeralHandler.setScale(5, this.significance);
         }
         public void calculateSignificanceRegarlessOfAnticipation() {
-                SignificanceCaculator significanceCaculator = new SignificanceCaculator(SampleParameterBag.sampleNum);
+                SignificanceCaculator significanceCaculator = new SignificanceCaculator(SampleParameterBag.getSampleNumber());
                 double significance = significanceCaculator.calculateGenesSignificance(this.getSampleNumberHarboringMutationInThisGene(), GIPS.sampleBackgroundMutationRate, this.effectiveRegionLength);
                 this.significance = significance;
         }
         
         
         public double calculateSignificanceAtAnticipation(double[] geneMutationRate){
-                SignificanceCaculator significanceCaculator = new SignificanceCaculator(SampleParameterBag.sampleNum);
+                SignificanceCaculator significanceCaculator = new SignificanceCaculator(SampleParameterBag.getSampleNumber());
                 double significance = significanceCaculator.calculateGenesSignificance(GlobalParameter.getAnticipation(), geneMutationRate, this.effectiveRegionLength);
                 this.setSignificanceAtAnticipation(significance);
                 return significance;

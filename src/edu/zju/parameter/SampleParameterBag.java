@@ -24,7 +24,7 @@ public class SampleParameterBag {
 
         private String organism;
         private LinkedList<Map.Entry<String, SampleParameter>> bag;
-        public static int sampleNum;
+        private static int sampleNum;
         private double homozygousGeneDetectingRate;
         private double heterozygousGeneDetectingRate;
         private SampleGeneBag sampleGeneBag;
@@ -53,14 +53,12 @@ public class SampleParameterBag {
                 return this.organism;
         }
 
-        private void setSampleNumber(int sampleNumber) {
-                this.sampleNum = sampleNumber;
+        public static void setSampleNumber(int sampleNumber) {
+                sampleNum = sampleNumber;
         }
-
-        public int getSampleNumber() {
-                return this.sampleNum;
+        public static int getSampleNumber(){
+                return sampleNum;
         }
-
         public void updateSampleParameter(SampleParameter sampleParameter) {
                 for (Map.Entry<String, SampleParameter> entry : bag) {
                         if (entry.getKey().equals(sampleParameter.getName())) {
@@ -78,7 +76,7 @@ public class SampleParameterBag {
                                 return entry.getValue();
                         }
                 }
-                edu.zju.common.CExecutor.stopProgram("Do not find sample: ["+sampleName+"]");
+                edu.zju.common.CExecutor.stopProgram("Do not find sample: ["+sampleName+"]. If your are using update mode, please make sure your have not changed \"[SAMPLE_LIST]\" section.");
                 return null;
         }
 
@@ -193,7 +191,6 @@ public class SampleParameterBag {
                 for (Map.Entry<String, SampleParameter> entry : map.entrySet()) {
                         this.bag.add(entry);
                 }
-                this.setSampleNumber(this.getSampleNumber() + 1);
         }
         public static String getIntermediateFilePath() {
                 return intermediateFilePath;
