@@ -116,9 +116,14 @@ public class SampleParameterBag {
                 LinkedList<Map.Entry<String, CommonInputFile>> fileList = new LinkedList<>();
                 HashMap<String, CommonInputFile> fileTemp = new HashMap<>();
                 for (String sampleName : this.getSamplesNamesList()) {
-                        if (this.getSample(sampleName).isPassSpecify()){
-                                continue;
-                        }
+                        //This place is commenting
+                        //because even if sample pass specify checking,
+                        // sample also need variant file to run.
+                        // if this place continue, sample will not get variant from VCF file
+                        // bug time: 2015.01.01
+                        //if (this.getSample(sampleName).isPassSpecify()){
+                        //        continue;
+                        //}
                         fileTemp = new HashMap<>();
                         fileTemp.put(sampleName, this.getSample(sampleName).getVCFFile());
                         if (fileTemp.entrySet().iterator().hasNext()) {

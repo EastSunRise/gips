@@ -24,7 +24,6 @@ public abstract class SNPAnnotationTool {
                 for (Map.Entry<String, CommonInputFile> entry : this.samplesVariantFile) {
                         SampleVariant sampleVariant = this.getSampleAnnotatedVariant(entry.getKey(), entry.getValue());
                         bag.addSampleVariant(sampleVariant);
-
                 }
                 return bag;
         }

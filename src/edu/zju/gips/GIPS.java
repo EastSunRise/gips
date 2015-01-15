@@ -59,10 +59,14 @@ public class GIPS {
                 GenomeEffectiveRegion genomeEffectiveRegion=this.getSampleGenomeEffectiveRegion();
                 for (Iterator<String> iterator = this.getSampleParameterBag().getSamplesNamesList().iterator(); iterator.hasNext();) {
                         SampleParameter sampleParameter = this.getSampleParameterBag().getSample(iterator.next());
-                        if(sampleParameter.isPassSpecify())continue;
+                        if(sampleParameter.isPassSpecify()){
+                                SampleVariant sampleVariant=sampleVariantBag.getSampleVariant(sampleParameter.getName());
+                                sampleParameter.setSampleVariant(sampleVariant);
+                                this.getSampleParameterBag().updateSampleParameter(sampleParameter);
+                                continue;
+                        }
                         SampleVariant sampleVariant=sampleVariantBag.getSampleVariant(sampleParameter.getName());
                         sampleParameter.setSampleVariant(sampleVariant);
-                        
                         int mode=0;//if homo sensitivity ==0, mode plus 1
                                    //if hetero sensitivity ==0 mode plus 2, let detector know which type senstivity should be detected
                         if (sampleParameter.getHomoVCSEstimated() == 0.0) {

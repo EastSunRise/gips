@@ -225,7 +225,7 @@ public class SNPEff extends edu.zju.snpAnnotationTools.SNPAnnotationTool {
                                 return targetFilePath;
                          }
                }
-                executor.execute("cd " + this.snpEffPath + "\n java -Xmx4G -jar " + this.snpEffPath + System.getProperty("file.separator") + "snpEff.jar eff -no-downstream -no-upstream -1 -no-intergenic -no-intron -v " + this.genomeVersion + " " + vcfPath + "  > " + targetFilePath + '\n');
+                executor.execute("cd " + this.snpEffPath + "\n java -Xmx4G -jar " + this.snpEffPath + System.getProperty("file.separator") + "snpEff.jar eff -no-downstream -no-upstream -1 -no-intergenic -no-utr -no-intron -v " + this.genomeVersion + " " + vcfPath + "  > " + targetFilePath + '\n');
                 String erroInf = executor.getErroInformation();
                 if (erroInf.contains("ERROR: Cannot read file ") && erroInf.contains("snpEffectPredictor.bin")) {
                         edu.zju.common.CExecutor.println(edu.zju.common.CExecutor.getRunningTime()+"SNPEff is downloading genome " + this.genomeVersion + " data");

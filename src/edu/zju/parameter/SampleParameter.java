@@ -295,6 +295,9 @@ public class SampleParameter {
                         this.studyPosition2Filter= new HashMap<>();
                 }
                 HashSet<Integer> chrPosSet=new HashSet<>();
+                if(map==null||map.isEmpty()){
+                        return;
+                }
                 for(String chr:map.keySet()){
                        if(!this.studyPosition2Filter.containsKey(chr)){
                                 this.studyPosition2Filter.put(chr, chrPosSet);
@@ -354,6 +357,7 @@ public class SampleParameter {
         public double getBackgroundMutationRateEstimated(){
                 return edu.zju.common.NumeralHandler.setScale(this.estimatedBackgroundMuationFreqency);
         }
+        //please consider the relationship between sample specify and filtering
         public boolean isPassSpecify(){
                 return (this.isSpecifyBVF&&this.isSpecifyHeteroVariantDetectionSensitivity&&this.isSpecifyHomoVariantDetectionSensitivity);
         }

@@ -123,8 +123,8 @@ public class GIPSJob {
                         SampleParameter s2=traceback.getSample(sample);
                         try {
                                 b1=s1.getVCFMd5().equals(s2.getVCFMd5());
-                                System.out.println(s1.getVCFMd5());
-                                System.out.println(s2.getVCFMd5());
+//                                System.out.println(s1.getVCFMd5());
+//                                System.out.println(s2.getVCFMd5());
                         } catch (Exception e) {
                         }
                         try {

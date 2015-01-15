@@ -2,10 +2,12 @@ package edu.zju.filter;
 
 import edu.zju.file.CommonInputFile;
 import edu.zju.parameter.SampleParameter;
+import edu.zju.parameter.SampleParameterBag;
 import edu.zju.variant.SampleSNP;
 import edu.zju.variant.SampleVariant;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 
 /**
  *
@@ -118,7 +120,6 @@ public class ControlFilter extends FilterSuper{
                 chrPosSet=this.studyPosition2Filter.get(chr);
                 chrPosSet.add(pos);
                 this.studyPosition2Filter.put(chr, chrPosSet);
-        }
-
-           
+        }      
+         
 }
