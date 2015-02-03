@@ -42,6 +42,7 @@ public class CongestionFilter extends FilterSuper{
                 while(snpIterator.hasNext()){
                         int density=1;
                         SNP previousSNP=snpIterator.next();
+                        if(!previousSNP.isIndel())continue;
                         for(SNP innerSNP:chrSNP){
                                 int window=Math.abs(previousSNP.getPosition()-innerSNP.getPosition());
                                 if(window<=this.windowSize/2&&window!=0){

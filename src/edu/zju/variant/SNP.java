@@ -230,5 +230,9 @@ public abstract class SNP {
                 info = info.substring(1, info.length());
                 return info;
         }
+        
+        public boolean isIndel(){
+                return ref.length()==alt.length();
+        }
 
 }
