@@ -215,7 +215,8 @@ public class GlobalParameter {
                         genomeInformation = null;//release 
                         file.closeInput();
                 } catch (Exception ex) {
-                        edu.zju.common.CExecutor.println("Genome could not be established!");
+                        ex.printStackTrace();
+                        edu.zju.common.CExecutor.stopProgram("Genome could not be established! Please check gff file.");
                 }
                 genomeEffectiveRegion=genomeEffectiveRegion = new GenomeEffectiveRegion(GlobalParameter.getEffectiveRegionParameter(), genome);
                 return genomeEffectiveRegion;

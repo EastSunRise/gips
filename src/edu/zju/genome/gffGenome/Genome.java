@@ -20,7 +20,7 @@ public class Genome extends edu.zju.genome.abstractGenome.Genome{
         public Genome(String organism,LinkedList<String> genomeInformation) {
                 super(organism);
            chromosomes=new HashMap<>();           
-           this.setGenome(genomeInformation);                
+           this.setGenome(genomeInformation); 
         }
         
         

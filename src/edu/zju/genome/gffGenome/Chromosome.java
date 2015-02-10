@@ -82,6 +82,7 @@ public class Chromosome extends edu.zju.genome.abstractGenome.Chromosome{
             Gene gene;
             String geneIDTemp = null;
             for(String line:chromosomeInformation){
+                  if(line.trim().isEmpty())continue;
                   lh.splitByTab(line);
                   HashMap<String,String> tagValuePaire=new HashMap<>();
                   for(String temp:lh.linesplit[8].split(";")){

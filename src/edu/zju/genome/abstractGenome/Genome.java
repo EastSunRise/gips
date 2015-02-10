@@ -11,7 +11,8 @@ public abstract class Genome {
         private LinkedList<String> chrIDs;
         private String organism;
         
-        public Genome(Genome g) {
+        public Genome(Genome g)
+        {       
                 this.chrIDs=g.getChrIDs();
                 this.setChrNumber(g.getChrNumber());
                 this.setOrganismName(g.getOrganismName());

@@ -114,7 +114,7 @@ public class SNPEff extends edu.zju.snpAnnotationTools.SNPAnnotationTool {
                 String line = null;
                 LineHandler lineHandler = new LineHandler();
                 while ((line = vcfAnnotatedFile.readLine()) != null) {
-                        if (line.toCharArray()[0] == '#') {
+                        if (line.trim().isEmpty()||line.toCharArray()[0] == '#') {
                                 continue;
                         }
                         SNP snp;
