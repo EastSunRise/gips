@@ -54,7 +54,7 @@ public class SampleParameter {
         public SampleParameter(GlobalParameter globalParameter,HashMap<String,String> map){
                 this.matrix=globalParameter.getMatrix();
                 this.callerScript=globalParameter.getCallerScriptPath();
-                this.script_md5=new CommonInputFile(this.callerScript).getFileMD5();
+                if(this.callerScript!=null) this.script_md5=new CommonInputFile(this.callerScript).getFileMD5();
                 this.artificialSNPNumber=globalParameter.getArtificialSNPNumber();
                 this.controlFilePath=globalParameter.getControlFilePath();
                 this.snpDensity=globalParameter.getSNPDensity();
@@ -99,6 +99,7 @@ public class SampleParameter {
                                                 info=Init.getScriptDirectory()+edu.zju.common.CExecutor.getFileSeparator()+info;
                                         }
                                         this.callerScript=info;
+                                        this.script_md5=new CommonInputFile(this.callerScript).getFileMD5();
                                         break;
                                 }           
                                 case "SCORE_MATRIX" :{

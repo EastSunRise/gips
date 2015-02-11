@@ -70,10 +70,15 @@ public class Genome extends edu.zju.genome.abstractGenome.Genome{
      * @param chromosome 
      */
     private void addChromosome(Chromosome chromosome){
-           this.chromosomes.put(chromosome.getID(), chromosome);
-           this.chrNumPlusOne();
-           this.addChrID(chromosome.getID());
+            //please note chr id 
+           if(chromosome.getID().trim().isEmpty()||chromosome.getID().contains("ChrUn")||chromosome.getID().contains("ChrSy")){
+                   
+           }else{
+                   this.chromosomes.put(chromosome.getID(), chromosome);
+                this.chrNumPlusOne();
+                this.addChrID(chromosome.getID());
 //           common.CExecutor.println(chromosome.getID()+" annotation is loaded successfully"+"  "+common.CExecutor.getRunningTime());
+           }
     }
     /**
      * 

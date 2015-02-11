@@ -201,7 +201,7 @@ public class GlobalParameter {
                 edu.zju.genome.gffGenome.Genome genome = null;
                 try {
                         while ((line = file.readLine()) != null) {//add all the genome information to LinkedList
-                                if (line.startsWith("#")) {
+                                if (line.trim().isEmpty()||line.startsWith("#")) {
                                         continue;
                                 }
                                 //contig or mitochondiron do not consider

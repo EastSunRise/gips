@@ -53,8 +53,7 @@ public class ArtificialReadGenerator {
               }
               SampleArtificialChromosome chromosomeTemp = this.getSampleArtificialChromosome();
               int changeTimes = 0;
-              for (Iterator<ArtificialSNP> iterator = chromosomeTemp.getArtificialSNPs().iterator(); iterator.hasNext();) {
-                     ArtificialSNP artificialSNP = iterator.next();
+              for(ArtificialSNP artificialSNP:chromosomeTemp.getArtificialSNPs()){
                      int artificialSNPPositionInRead = artificialSNP.getPostion() - readStartPosition;
                      String genotype = artificialSNP.getGenotype();
                      if (artificialSNPPositionInRead < 0) {

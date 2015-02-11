@@ -57,8 +57,8 @@ public class ChromosomeEffectiveRegion extends edu.zju.genome.abstractGenome.Chr
                   positionContainer.add2Container(geneEffectiveRegions.get(it.next()).getEffectiveRegionsInGene());
            }
            this.setRegions(positionContainer.converterPointPosition2Region());
-           positionContainer.cleanContainer();
            this.setMaxPosition(this.getRegionsInChromosome().getLast()[1]);
+           positionContainer.cleanContainer();
     } 
     private void setMaxPosition(int position){
            this.maxPosition=position;
