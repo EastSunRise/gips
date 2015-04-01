@@ -28,13 +28,13 @@ Usage:        `java -jar GIPS.jar [options] `
 
 Example:    `java –Xms5g -jar GIPS.jar -T <tool>  -p /path/to/project_folder`
 
-|| **Options** ||
-|| -h (-H) ||&nbsp;|| Show help ||
-|| -Test ||&nbsp;|| Initiate a new project with test setup||
-|| -init || /path/to/project\_folder || Initiate a new project ||
-||-p||/path/to/project\_folder||Work with an existing project||
-|| -T || <gips|vcs|filter> || Select GIPS function. gips: full work flow; vcs: only estimate variant calling sensitivity for each sample; filter: only filter sample variants. Defaults to gips. ||
-|| -update||&nbsp;|| Run GIPS in update mode. GIPS will try to re-use intermediate results produced in the previous run. ||
+| **Options** |
+| -h (-H) |&nbsp;| Show help |
+| -Test |&nbsp;| Initiate a new project with test setup|
+| -init | /path/to/project_folder | Initiate a new project |
+|-p|/path/to/project_folder|Work with an existing project|
+| -T | <gips\|vcs\|filter> | Select GIPS function. gips: full work flow; vcs: only estimate variant calling sensitivity for each sample; filter: only filter sample variants. Defaults to gips. |
+| -update|&nbsp;| Run GIPS in update mode. GIPS will try to re-use intermediate results produced in the previous run. |
 
 Detail information, please see [GIPS manual](https://drive.google.com/folderview?id=0B2oRK3vUXNqCdDZQbzRBNnJXYVU&usp=sharing).
 # Protocol Specification (“PROJECT.ini”) #
