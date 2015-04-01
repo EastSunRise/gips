@@ -28,13 +28,13 @@ Usage:        `java -jar GIPS.jar [options] `
 
 Example:    `java –Xms5g -jar GIPS.jar -T <tool>  -p /path/to/project_folder`
 
-| **Options** |  |  |
+| **Options** |
 |:------------|
 | -h (-H) |  | Show help |
 | -Test |  | Initiate a new project with test setup|
 | -init | /path/to/project_folder | Initiate a new project |
 |-p|/path/to/project_folder|Work with an existing project|
-| -T | <gips\|vcs\|filter> | Select GIPS function. gips: full work flow; vcs: only estimate variant calling sensitivity for each sample; filter: only filter sample variants. Defaults to gips. |
+| -T | | Select GIPS function. gips: full work flow; vcs: only estimate variant calling sensitivity for each sample; filter: only filter sample variants. Defaults to gips. |
 | -update|  | Run GIPS in update mode. GIPS will try to re-use intermediate results produced in the previous run. |
 
 
