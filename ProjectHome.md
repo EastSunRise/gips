@@ -30,6 +30,7 @@ Example:    `java –Xms5g -jar GIPS.jar -T <tool>  -p /path/to/project_folder`
 
 | **Options** |
 |:------------|
+||
 | -h (-H) |  | Show help |
 | -Test |  | Initiate a new project with test setup|
 | -init | /path/to/project_folder | Initiate a new project |
