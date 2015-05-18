@@ -1,6 +1,6 @@
 package edu.zju.filter;
 
-import edu.zju.matrix.CodonChange;
+import edu.zju.matrix.AAChange;
 import edu.zju.matrix.Matrix;
 import edu.zju.parameter.SampleParameter;
 import edu.zju.variant.SNP;
@@ -33,22 +33,33 @@ public class BigDifferenceFilter extends FilterSuper{
         }
         @Override
         SampleVariant filtrateSampleVariant(SampleVariant sampleVariant){
+                       
                LinkedList<SNP> sampleSNPs=sampleVariant.getSnps();
                LinkedList<SNP> filtratedSNPs=new LinkedList<>();
                LinkedList<SNPAnnotation> snpAnnotation ;
                SNP snp;
+               int i=0;
                for(Iterator<SNP> it=sampleSNPs.iterator();it.hasNext();){
                       snp=it.next();
+                      //retain all indels
+                      if(snp.isIndel()) {
+                          filtratedSNPs.add(snp);
+                          continue;
+                      }
                       snpAnnotation = snp.getSNPAnnotations();
                       int originAnnotationNumber=snpAnnotation.size();
                       for(Iterator<SNPAnnotation> iterator=snpAnnotation.iterator();iterator.hasNext();){
                              SNPAnnotation annotation=iterator.next();
-                             if(annotation.isPassBigDfferenceFilter()) continue;
-                             if(annotation.isHighRisk()) continue;
+                             if(annotation.isPassBigDfferenceFilter()) {
+                                 continue;
+                             }
+                             if(annotation.isHighRisk()) {
+                                 continue;
+                             }
                              if(annotation.isCoding()){
-                                    CodonChange codonChange =annotation.getCodonChange();
-                                    String originCodon=codonChange.getOriginCodon();
-                                    String mutationCodon=codonChange.getMutationCodon();
+                                    AAChange codonChange =annotation.getCodonChange();
+                                    String originCodon=codonChange.getOriginAA();
+                                    String mutationCodon=codonChange.getMutationAA();
                                     int score=this.matrix.getScore(originCodon, mutationCodon);
                                     if(score>this.maxAAsimilarityScore){
                                            iterator.remove();
@@ -56,7 +67,9 @@ public class BigDifferenceFilter extends FilterSuper{
                              }
                       }
                       int finalAnnotationNumber=snpAnnotation.size();
-                      if(originAnnotationNumber==0||finalAnnotationNumber>0) filtratedSNPs.add(snp);
+                      if(originAnnotationNumber==0||finalAnnotationNumber>0) {
+                          filtratedSNPs.add(snp);
+                      }
                               
                }
                sampleVariant.renewSNPsInVariant(filtratedSNPs);

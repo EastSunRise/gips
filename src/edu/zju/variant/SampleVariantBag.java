@@ -49,7 +49,7 @@ public class SampleVariantBag {
         public void addSampleVariant(SampleVariant sampleVariant) {
                 this.bag.put(sampleVariant.getName(), sampleVariant);
                 sampleNum = sampleNum + 1;
-                edu.zju.common.CExecutor.println(edu.zju.common.CExecutor.getRunningTime()+sampleVariant.getName() + "\t" + sampleVariant.getSNPCounts() + " variants");
+                edu.zju.common.CExecutor.println(edu.zju.common.CExecutor.getRunningTime()+"\t"+sampleVariant.getName() + "\t" + sampleVariant.getSNPCounts() + " variants");
         }
 
         /**

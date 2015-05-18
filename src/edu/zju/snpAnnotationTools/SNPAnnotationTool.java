@@ -32,7 +32,7 @@ public abstract class SNPAnnotationTool {
                 return null;
         }
 
-        protected CommonInputFile annotateSNPInVCFFile(String sampleName, CommonInputFile file) {
+        protected CommonInputFile annotateVCFFile(String sampleName, CommonInputFile file) {
                 return null;
         }
 }

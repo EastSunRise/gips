@@ -1,6 +1,6 @@
 package edu.zju.variant;
 
-import edu.zju.matrix.CodonChange;
+import edu.zju.matrix.AAChange;
 
 /**
  *
@@ -8,7 +8,7 @@ import edu.zju.matrix.CodonChange;
  */
 public class SNPAnnotation {
 
-        private CodonChange codonChange;
+        private AAChange aaChange;
         private boolean coding = false;
         private boolean highRisk = false;
         private boolean isExon = false;
@@ -20,15 +20,15 @@ public class SNPAnnotation {
                 return this.coding;
         }
 
-        public void setCodonChange(String origin, String mutation) {
+        public void setAA_Symbol_Change(String origin, String mutation) {
                 this.coding = true;
-                this.codonChange = new CodonChange();
-                this.codonChange.setOriginCodon(origin);
-                this.codonChange.setMutationCodon(mutation);
+                this.aaChange = new AAChange();
+                this.aaChange.setOriginCodon(origin);
+                this.aaChange.setMutationCodon(mutation);
         }
 
-        public CodonChange getCodonChange() {
-                return this.codonChange;
+        public AAChange getCodonChange() {
+                return this.aaChange;
         }
 
         public void setHighRisk() {
@@ -51,10 +51,10 @@ public class SNPAnnotation {
         }
 
         public String getCodonChangeInfo() {
-                if (this.codonChange == null || this.codonChange.getOriginCodon().isEmpty()) {
+                if (this.aaChange == null || this.aaChange.getOriginAA().isEmpty()) {
                         return "";
                 }
-                return '(' + this.codonChange.getOriginCodon() + ":" + this.codonChange.getMutationCodon() + ')';
+                return '(' + this.aaChange.getOriginAA() + ":" + this.aaChange.getMutationAA() + ')';
         }
 
         public String getItsGeneName() {

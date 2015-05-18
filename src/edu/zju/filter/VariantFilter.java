@@ -49,6 +49,7 @@ public class VariantFilter {
                                 sampleParameter=filter.filtrateSampleParameter(sampleParameter);
                         }        
                         int afterFilering=sampleParameter.getSampleVariant().getSNPCounts();
+                        
                         sampleParameter.setFunctionalFIR((double)(originalClinivalVariantNumber-afterFilering)/originalClinivalVariantNumber);
                         //put back true sample variant
                         sampleParameter.setSampleVariant(sampleVariantInSample);

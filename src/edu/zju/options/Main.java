@@ -4,6 +4,7 @@
  */
 package edu.zju.options;
 
+import edu.zju.common.CExecutor;
 import edu.zju.gips.GIPS;
 import edu.zju.gips.ResultOutputer;
 import edu.zju.parameter.GIPSJob;
@@ -19,8 +20,8 @@ public class Main {
 
         private static String gipsHeader=""
                                  +"==============================================================================\n"
-                                 +"        Gene Identification via Phenotype Sequencing  (Version 1.1.5)\n"                            
-                                 +"     Copyright(c) 2013-2014, Zhongxu Zhu, Xin Chen. All Rights Reserved.\n"   
+                                 +"        Gene Identification via Phenotype Sequencing  (Version 1.2.5)\n"                            
+                                 +"     Copyright(c) 2014-2015, Zhongxu Zhu, Xin Chen. All Rights Reserved.\n"   
                                  +"==============================================================================\n";
         
         public static void main(String[] args) throws IOException, Exception {
@@ -73,6 +74,7 @@ public class Main {
                 job=gips.gipsRun();
                 ResultOutputer ro=new ResultOutputer(job);
                 ro.outputResult();
+                CExecutor.println("******** ******** ******** ********");
         }
 
 }

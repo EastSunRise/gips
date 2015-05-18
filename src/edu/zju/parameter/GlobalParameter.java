@@ -179,6 +179,7 @@ public class GlobalParameter {
                 if(anticipation==0){
                         anticipation=sampleNumber;
                 }else if(anticipation>sampleNumber||anticipation<=0){
+                     anticipation=sampleNumber;
                      CExecutor.println(CExecutor.getRunningTime()+"CANDIDATE_CRITERIA is reset to sample numbers");   
                 }
                 return anticipation;

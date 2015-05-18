@@ -299,9 +299,9 @@ public class ResultOutputer {
                 }
                 for(SampleGene candidateGene:candidateGeneBag.getCandidateGenes()){
                         geneFile.write("\n----------------------------------------------------------------\n[Candidate gene: "+candidateGene.getGeneName()+"]\n");
-                        geneFile.write("#SAMPLE	CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT\tEFF\n");
+                        geneFile.write("#SAMPLE	CHROM	POS	ID	REF	ALT	DP\tGT\tEFF\n");
                         for(SNP snp:candidateGene.getSNPInThisCandidateGene()){
-                                geneFile.write(snp.getSampleName()+"\t"+snp.getSNPInfoInVcf()+"\t"+snp.getAnnotationInfo()+"\n");
+                                geneFile.write(snp.getSampleName()+"\t"+snp.getChr()+"\t"+snp.getPosition()+"\t"+snp.getId()+"\t"+snp.getRef()+"\t"+snp.getAlt()+"\t"+snp.getDepth()+"\t"+snp.getGenotype()+"\t"+snp.getAnnotationInfo()+"\n");
                         }
                 }
                 geneFile.closeOutput(); 

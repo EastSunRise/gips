@@ -35,14 +35,14 @@ public class GenomeEffectiveRegion extends edu.zju.genome.abstractGenome.Genome{
         * @param genome 
         */
     private void setGenomeEffectivetRegion(Genome genome){
-           edu.zju.common.CExecutor.print(edu.zju.common.CExecutor.getRunningTime()+"Building genome effective region, please wait");
+           edu.zju.common.CExecutor.print(edu.zju.common.CExecutor.getRunningTime()+"Building genome effective region, please wait ");
            int total=0;
            ChromosomeEffectiveRegion chromosomeEffectiveRegion;
            for(String chrID:genome.getChrIDs()){
                   chromosomeEffectiveRegion = new ChromosomeEffectiveRegion(genome.getChromosome(chrID));
                   this.addChromosomeEffectiveRegion(chromosomeEffectiveRegion);
                   total=total+chromosomeEffectiveRegion.getLength();
-                  edu.zju.common.CExecutor.print(".");
+                  edu.zju.common.CExecutor.print("*");
            }
            edu.zju.common.CExecutor.println("");
            this.setEffectiveRegionLength(total);

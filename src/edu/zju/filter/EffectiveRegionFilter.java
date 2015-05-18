@@ -29,6 +29,7 @@ public class EffectiveRegionFilter extends FilterSuper{
     
         @Override
     SampleVariant filtrateSampleVariant(SampleVariant sampleVariant){
+           
            LinkedList<SNP> sampleSNPs=sampleVariant.getSnps();
            LinkedList<SNP> filtratedSNPs=new LinkedList<>();
            SNP snp;
@@ -60,13 +61,21 @@ public class EffectiveRegionFilter extends FilterSuper{
                   int pos=snp.getPosition();
                   boolean isRetained=false;
                   HashSet<String> geneNameSet=new HashSet<>();
+                  if(snp.getSNPAnnotations().size()==0){
+                        if(this.genomeEffectiveRegion.isInEffectiveRegion(chr, pos)){
+                                          isRetained=true;
+                        }
+                  }
                   //find which gene the snp in
                   for(edu.zju.variant.SNPAnnotation snpa:snp.getSNPAnnotations()){
-                          String geneName=snpa.getItsGeneName().trim();
-                          if(geneName.length()==0){
-                                  isRetained=false;
-                                  break;
+                          String geneName=snpa.getItsGeneName();
+                          if(geneName==null||geneName.trim().length()==0){
+                                  if(this.genomeEffectiveRegion.isInEffectiveRegion(chr,pos)){
+                                          isRetained=true;
+                                  }
+                                  continue;
                           }
+                          geneName=geneName.trim();
                           if(geneName.length()!=0)geneNameSet.add(geneName);
                   }
                   // find whether snp in gene effective region

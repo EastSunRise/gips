@@ -1,4 +1,4 @@
-package edu.zju.gips;
+ package edu.zju.gips;
 
 import edu.zju.file.CommonInputFile;
 import edu.zju.filter.VariantFilter;

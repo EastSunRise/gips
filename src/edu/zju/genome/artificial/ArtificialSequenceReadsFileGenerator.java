@@ -1,6 +1,8 @@
 package edu.zju.genome.artificial;
 
+import edu.zju.common.CExecutor;
 import edu.zju.common.LineHandler;
+import edu.zju.common.RunnablePrinter;
 import edu.zju.file.CommonInputFile;
 import edu.zju.file.CommonOutputFile;
 import edu.zju.file.Config;
@@ -81,6 +83,15 @@ public class ArtificialSequenceReadsFileGenerator {
                      break;
               }while(true);
               edu.zju.common.CExecutor.print(edu.zju.common.CExecutor.getRunningTime()+"Reading "+inputFile.getFilePath()+". Please wait");
+              
+              //tell user software not be blocked
+              //contadict with print based on number in the below
+              RunnablePrinter printer=new RunnablePrinter();
+              printer.setContent2Print("*");
+              printer.setWelcomeWords("");
+              printer.setSleepSecond(150);
+              Thread printerThread=new Thread(printer);
+              printerThread.start();
               //Thread number 
               int threadNumber=GlobalParameter.getThreadsNumber();
               Thread thread[]=new Thread[threadNumber];
@@ -97,6 +108,9 @@ public class ArtificialSequenceReadsFileGenerator {
               } 
               outputFile.closeOutput();
               inputFile.closeInput();
+              printerThread.stop();
+              CExecutor.println("");
+              printerThread.interrupt();
               CommonInputFile samFile=FileFactory.getInputFile(path, "SAM");
               edu.zju.common.CExecutor.println("\n"+edu.zju.common.CExecutor.getRunningTime()+"SAM format file: "+samFile.getFilePath());
               edu.zju.common.CExecutor.println(edu.zju.common.CExecutor.getRunningTime()+"Reads number for simulated SNPs: "+this.getReadsNumber()); 
@@ -139,11 +153,12 @@ public class ArtificialSequenceReadsFileGenerator {
                                 line=artificialReadGenerator.getNewRead();
                                 if(line!=null) {
                                        this.output.write(line+'\n');
+                                       // disable if RunnalePrinter is used in above
                                        readsNumber=readsNumber+1;
-                                       int s=readsNumber%100000;
-                                       if(s==0){
-                                               edu.zju.common.CExecutor.print(".");
-                                       }
+//                                       int s=readsNumber%100000;
+//                                       if(s==0){
+//                                               edu.zju.common.CExecutor.print("*");
+//                                       }
                                 } 
                                 
                          }

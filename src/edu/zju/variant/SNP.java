@@ -16,9 +16,11 @@ public abstract class SNP {
         private String alt;//alternate nucleic acid
         private String genotype="-1";//genotype information, if genotype=-1 means there no GT information
                                      // control filter will take use of -1
+        private String id;
         private LinkedList<SNPAnnotation> snpAnnotations;
         private String sampleName;
-        private String snpInfoInVcf;
+        private String snpRawInfoBeforeAnnotateInVcf;
+        private String annotationFieldInfo;
         private boolean inWindow = false;
         private String depth="0";
         private String quality="0";
@@ -32,20 +34,14 @@ public abstract class SNP {
                 snpAnnotations = new LinkedList<>();
 
         }
+
+        
         /**
          *
          * @param snpInfo contains one variant's concrete information
          */
         private void setSNP(String snpInfo) {
                 LineHandler lineHandler = new LineHandler();
-                String snpEffInfo = lineHandler.regexMatch(snpInfo, "EFF=(.*?)\t");
-                if (snpEffInfo != null) {
-                        //please note, next determine whether output snpeff related information
-                        snpInfo = snpInfo.replace("EFF="+snpEffInfo, "");
-                }
-                this.setSNPInfoInVcf(snpInfo);
-
-
                 lineHandler.splitByTab(snpInfo);
                 String chr;
                 if ((chr = lineHandler.linesplit[0].trim().toString()).isEmpty()) {
@@ -57,9 +53,10 @@ public abstract class SNP {
                 try {
                         this.setPosition(Integer.parseInt(lineHandler.linesplit[1]));
                 } catch (java.lang.NumberFormatException e) {
-                        edu.zju.common.CExecutor.stopProgram(lineHandler.linesplit[1]+" is not a position in "+this.getSampleName()+"\n"+snpEffInfo);
+                        edu.zju.common.CExecutor.stopProgram(lineHandler.linesplit[1]+" is not a position in "+this.getSampleName()+"\n"+snpInfo);
                         this.setPosition(0);
                 }
+                this.setId(lineHandler.linesplit[2]);
                 this.setRef(lineHandler.linesplit[3]);
                 this.setAlt(lineHandler.linesplit[4]);
                 //snp quality or depth may null,so we use string formate
@@ -72,7 +69,6 @@ public abstract class SNP {
                 }catch(java.lang.ArrayIndexOutOfBoundsException e){
                         return;
                 }
-                
                 //if(genotype!=null&&genotype.equals("-1")) this.setChr(null);
         }
 
@@ -177,13 +173,19 @@ public abstract class SNP {
         }
 
         public String getSNPInfoInVcf() {
-                return this.snpInfoInVcf;
+                return this.snpRawInfoBeforeAnnotateInVcf;
         }
 
-        private void setSNPInfoInVcf(String info) {
-                this.snpInfoInVcf = info;
+        public void setSNPRawInfoBeforeAnnotate(String rawInfo){
+                this.snpRawInfoBeforeAnnotateInVcf=rawInfo;
+                
         }
-
+        public void setAnnotationFieldInfo(String info){
+                this.annotationFieldInfo=info;
+        }
+        public String getAnnotationFieldInfo(){
+                return this.annotationFieldInfo;
+        }
         public boolean isInWindow() {
                 return this.inWindow;
         }
@@ -197,6 +199,7 @@ public abstract class SNP {
         }
 
         public String getDepth() {
+                if(this.depth.equals("0"))return "";
                 return this.depth;
         }
 
@@ -209,7 +212,10 @@ public abstract class SNP {
         }
 
         protected abstract String getGTInformation(String info);
-
+        /**
+         * 
+         * @return result is used in output file.
+         */
         public String getAnnotationInfo() {
                 TreeSet<String> tree = new TreeSet<>();
                 String info = new String();
@@ -232,7 +238,22 @@ public abstract class SNP {
         }
         
         public boolean isIndel(){
-                return ref.length()==alt.length();
+                return !(ref.length()==alt.length());
+        }
+        private void setId(String id){
+            this.id=id;
+        }
+        public String getId(){
+            return this.id;
+        }
+        /**
+         * To free memory
+         */
+        public void clearAnnotationFieldInfo(){
+            this.annotationFieldInfo=null;
+        }
+        public void  clearRawSNPInfoBeforeAnnotate(){
+            this.snpRawInfoBeforeAnnotateInVcf=null;
         }
 
 }
