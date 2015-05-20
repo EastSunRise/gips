@@ -42,20 +42,33 @@ public class AA2Symbol {
 
 
         public String getAA(String symbol){
-                String AA=null;
-                for(Map.Entry<String,String> entry:this.map.entrySet()){
+                String AA=new String();
+                char [] charArrary=symbol.toCharArray();
+                for(int i=0;i<charArrary.length;i++){
+                    String tempString=String.valueOf(charArrary[i]);
+                    String tempAA = null;
+                    for(Map.Entry<String,String> entry:this.map.entrySet()){
                         entry.getValue().equals(symbol);
-                        AA=entry.getKey();break;
-                }
-                if(AA==null){
+                        tempAA=entry.getKey();break;
+                    }
+                    if(tempAA==null){
                       CExecutor.stopProgram("Do not find "+symbol+" in the AA2Symbol map");
+                    }else{
+                        AA=AA+tempAA;
+                    }
                 }
                 return AA;
         }
         public String getSymbol(String AA){
-                String symbol=this.map.get(AA);
-                if(symbol==null){
-                      CExecutor.stopProgram("Do not find "+AA+" in the AA2Symbol map");
+                String symbol=new String();
+                for(int i=0;i<AA.length();i=i+3){
+                    String tempSymbol=null;
+                    tempSymbol=this.map.get(AA.substring(i, i+3));
+                    if(tempSymbol==null){
+                         CExecutor.stopProgram("Do not find "+AA+" in the AA2Symbol map");
+                    }else{
+                        symbol=symbol+tempSymbol;
+                    }
                 }
                 return symbol;
         }

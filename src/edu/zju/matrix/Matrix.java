@@ -37,13 +37,22 @@ public class Matrix {
         * @return 
         */
        public int getScore(String originAA,String mutatedAA){
-              String temp=originAA+mutatedAA;
-              if(!this.matrix.keySet().contains(temp)){
+              int minimumScore=0;
+              if(originAA.length()!=mutatedAA.length()) return 2;
+              //origin * to mutation ? (eg. codon lost) 
+              //common.CExecutor.println("Don't find the score of "+originAA+" mutated to "+mutatedAA);
+              for(int i=0;i<originAA.length();i++){
+                  String temp=originAA.substring(i, i+1)+mutatedAA.substring(i, i+1);
+                  if(!this.matrix.keySet().contains(temp)){
                       return 2;
-                     //origin * to mutation ? (eg. codon lost) 
-                     //common.CExecutor.println("Don't find the score of "+originAA+" mutated to "+mutatedAA);
+                  }else{
+                      if(minimumScore>this.matrix.get(temp)){
+                          minimumScore=this.matrix.get(temp);
+                      }
+                  }
+                  
               }
-              return this.matrix.get(temp);
+              return this.matrix.get(minimumScore);
        }
        public static boolean isMatrixName(String matrixName){
                if(edu.zju.file.Config.getMatrix(matrixName)==null){
