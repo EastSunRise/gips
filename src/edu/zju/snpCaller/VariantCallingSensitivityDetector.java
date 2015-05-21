@@ -1,5 +1,6 @@
 package edu.zju.snpCaller;
 
+import edu.zju.common.CExecutor;
 import edu.zju.file.CommonInputFile;
 import edu.zju.genome.artificial.SampleArtificialGenome;
 import edu.zju.parameter.VariantCallingSensitivityDectectorParameter;
@@ -51,13 +52,19 @@ public class VariantCallingSensitivityDetector {
                 int snpNumber=0;
                 while ((line = vcfFile.readLine()) != null) {
                         String snpVCFChr;
-                        int snpVCFPos;
+                        int snpVCFPos=0;
                         String variantType;
                         if (line.toCharArray()[0] == '#') {
                                 continue;
                         }
                         snpVCFChr=line.split("\t")[0].trim().toString();
-                        snpVCFPos=Integer.valueOf(line.split("\t")[1].trim().toString());
+                        
+                        try {
+                            snpVCFPos=Integer.valueOf(line.split("\t")[1].trim().toString());
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            CExecutor.stopProgram("\n########################\nCan't read "+this.vcfFile.getFilePath()+"\n\t\tIs a VCF format file?");
+                        }
                         if(line.split("\t")[9].contains("1/1")){
                                 variantType="1/1";
                         }else continue;

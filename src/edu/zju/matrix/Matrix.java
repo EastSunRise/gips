@@ -52,7 +52,7 @@ public class Matrix {
                   }
                   
               }
-              return this.matrix.get(minimumScore);
+              return minimumScore;
        }
        public static boolean isMatrixName(String matrixName){
                if(edu.zju.file.Config.getMatrix(matrixName)==null){

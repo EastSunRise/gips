@@ -199,7 +199,9 @@ public abstract class SNP {
         }
 
         public String getDepth() {
-                if(this.depth.equals("0"))return "";
+                if(this.depth==null||this.depth.equals("0")){
+                    return " ";
+                }
                 return this.depth;
         }
 
