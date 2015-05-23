@@ -98,7 +98,7 @@ public class TESTProject {
                      + "\n# index"
                      + "\n samtools index "+Init.getTemporaryFolderPath()+s+"sample.sort.bam"
                      + "\n# call"
-                     + "\n samtools mpileup -ugf "+Init.getRefDirectory()+s+"Test.fa "+ Init.getTemporaryFolderPath()+s+"sample.sort.bam"+" -go - | bcftools call -vmO v -o "+Init.getTemporaryFolderPath()+s+"sample.bvf"
+                     + "\n samtools mpileup -ugf "+Init.getRefDirectory()+s+"Test.fa "+ Init.getTemporaryFolderPath()+s+"sample.sort.bam"+" -Q 13 -q 30 -go - | bcftools call -vmO v -o "+Init.getTemporaryFolderPath()+s+"sample.bvf"
                 //     + "\n bcftools view "+Init.getTemporaryFolderPath()+s+"sample.bvf | vcfutils.pl varFilter -d 0 -w 0 > \"$2\""
                      + "");
              scriptOutFile.closeOutput();

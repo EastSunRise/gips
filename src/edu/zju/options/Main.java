@@ -20,7 +20,7 @@ public class Main {
 
         private static String gipsHeader=""
                                  +"==============================================================================\n"
-                                 +"        Gene Identification via Phenotype Sequencing  (Version 1.2.5)\n"                            
+                                 +"        Gene Identification via Phenotype Sequencing  (Version 1.3.5)\n"                            
                                  +"     Copyright(c) 2014-2015, Zhongxu Zhu, Xin Chen. All Rights Reserved.\n"   
                                  +"==============================================================================\n";
         

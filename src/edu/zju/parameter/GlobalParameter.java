@@ -34,7 +34,7 @@ public class GlobalParameter {
         private String matrix="DEFAULT";
         private static String snpEffPath;
         private static edu.zju.file.CommonInputFile genomeGffFile;
-        private static String effectiveRegion="CDS|SpliceSite=2";
+        private static String effectiveRegion="CDS|SpliceSite=2|Promoter=1000";
         private static String filters="EBA";
         private static int anticipation=0;
         private int artificialSNPNumber=5000;
