@@ -8,3 +8,5 @@
 **20150115**:   Fix bug: sampleNumber variable is not correct. Thank Weitao Wang for reminding me this bug when he run GIPS.
 
 **20150517**:   Move to github.
+
+**20150526**:	Upload scripts

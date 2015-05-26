@@ -18,7 +18,9 @@ Gene identification via phenotype sequencing (GIPS) computes four measurements o
 
   * [GIPS software package](https://drive.google.com/folderview?id=0B2oRK3vUXNqCdDZQbzRBNnJXYVU&usp=sharing)                        Require JAVA 1.7 on Linux.
   * [GIPS Manual](https://drive.google.com/folderview?id=0B2oRK3vUXNqCdDZQbzRBNnJXYVU&usp=sharing)
-  * [Kabuki exome sequencing data reanalysis scripts](https://drive.google.com/folderview?id=0B2oRK3vUXNqCdDZQbzRBNnJXYVU&usp=sharing)
+  * [Kabuki exome sequencing data reanalysis scripts](https://github.com/RLIBS-ZJU/gips/tree/wiki/Scripts)
+  * [Pho2 supressor identification scripts](https://github.com/RLIBS-ZJU/gips/tree/wiki/Scripts)
+
 # Command Options #
 
 ---
