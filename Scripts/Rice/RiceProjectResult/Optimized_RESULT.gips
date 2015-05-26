@@ -1,0 +1,117 @@
+#================================================================
+# Gene Identification via Phenotype Sequencing - Result File
+#
+# Job id: a0db38e631fea61ead7b300b6c2b9ef7
+# Completion time:2015-05-07 14:09:22
+# Feature option '-T gips'
+#================================================================
+
+[Study Effectiveness]
+Chance to report true phenotype-associated genes 
+If phenotype is recessive: 0.344
+If phenotype is  dominant: 0.296
+
+Significance of violating Mendelian phenotype assumption
+If phenotype is recessive: 1.0
+If phenotype is  dominant: 1.0
+
+Expected number of random genes that may be reported: 0.0366
+
+[Candidate Gene List]
+#Details on the variants they harbor can be found in CANDIDATE_GENES.txt
+GENE_ID	GENE_NAME	Chr	EFF_REGION_LENGHT	SIGNIFICANCE	NUM_VARIANT	NUM_SAMPLE
+LOC_Os02g56510	LOC_Os02g56510	Chr2	2504	8.63495E-7	3	3
+LOC_Os04g13510	LOC_Os04g13510	Chr4	4580	5.21813E-6	11	3
+
+[Sample Specific Sensitivity and Specificity]
+Variant Calling Sensitivity (VCS)
+SAMPLE_NAME	HOMO_VCS	HETERO_VCS
+29	0.808	0.766
+28	0.913	0.881
+249	0.907	0.85
+
+False Ignorance Rate (FIR)
+SAMPLE_NAME	FIR_FUNCTION	FIR_STUDY	FIR
+29	0.197	1.147E-5	0.197
+28	0.197	1.744E-5	0.197
+249	0.197	1.668E-5	0.197
+
+Sample Variant Detection Sensitivity (VDS) (Measurement of sensitivity)
+SAMPLE_NAME	HOMO_VDS	HETERO_VDS
+29	0.648	0.614
+28	0.732	0.707
+249	0.727	0.682
+
+Sample Background  Variant  Frequency (BVF) (Measurement of specificity)
+SAMPLE_NAME	BVF
+29	3.58E-6
+28	5.847E-6
+249	2.666E-6
+
+#----------------------------------------------------------------
+# [Protocol]
+#----------------------------------------------------------------
+# [GLOBAL]
+# PROJECT :Rice                     
+# REF_GENOME_ANNOTATION.GFF : /nas1/zzx/RiceData/GIPS/Rice/Ref/all(rice).gff3
+# SNPEFF_GENOME_VERSION     :  rice7
+# SNPEFF  :    /nas1/zzx/RiceData/snpEff_4.1
+# CANDIDATE_CRITERIA :  3  
+# VAR_CALL_SCRIPT :   /nas1/zzx/RiceData/GIPS/Rice/Script/2015-04-26Q13_q0.sh
+# EFF_REGION  : CDS|splicesite=2
+# VAR_FILTERS :   EABC
+# SCORE_MATRIX: PAM120
+# MAX_AA_SCORE: 
+# NUM_SIM_SNPS : 5000
+# MAX_VAR_DENSITY:2
+# 
+# [SAMPLE_LIST]
+# 29
+# 28
+# 249
+# 
+# 
+# [SAMPLE]
+# SAMPLE_NAME : 28
+# SAMPLE.VCF  : /nas1/zzx/RiceData/out/28/samtools_Q15_q20_noDPFiltered.vcf
+# READS_ALIGNMENT.SAM : /nas1/zzx/RiceData/out/28/btout.sam 
+# 
+#  
+# [SAMPLE]
+# SAMPLE_NAME : 29
+# SAMPLE.VCF  : /nas1/zzx/RiceData/out/29/samtools_Q15_q20_noDPFiltered.vcf
+# READS_ALIGNMENT.SAM : /nas1/zzx/RiceData/out/29/btout.sam
+# 
+#   
+# #[SAMPLE]
+# #SAMPLE_NAME : 58
+# #SAMPLE.VCF  : /nas1/zzx/RiceData/out/58/samtools_Q15_q20_noDPFiltered.vcf
+# #READS_ALIGNMENT.SAM : /nas1/zzx/RiceData/out/58/btout.sam
+# #ESTIMATED_HOMO_VCS:0.8
+# #ESTIMATED_HETERO_VCS:0.8
+#   
+# [SAMPLE]
+# SAMPLE_NAME : 249
+# SAMPLE.VCF  : /nas1/zzx/RiceData/out/249/samtools_Q15_q20_noDPFiltered.vcf
+# READS_ALIGNMENT.SAM : /nas1/zzx/RiceData/out/249/btout.sam
+# 
+# 
+#----------------------------------------------------------------
+#
+#
+
+# Caution: Do not modify the below section
+[GIPS TRACEBACK]
+H4sIAAAAAAAAANWUXWvbMBSG7/VLtova+pZs2IViK6mHv2p7oaUU4c81kCVpko5R9uOnJF1XWFJK
+6U0vbCy9Pq8Orx7O9STORiq+AXmRfdVB5Reztgdlmuvx2Ex0miXaTHVRRlnqr60kQKGfBJWmWaUq
+qzmT8dh3F/UGuQ8Pv9ydSVhva3cS5eV+5Rb94Nbz+aedyWfn+zAQsDui0JOddRCWvzerudU2s23/
+BYOpKsw4iit7tK/VKACBSsMoVJU2QRHZ7Uj55LHPYwdvFis9DIY6CMTR6K0Nr/vBTIrglghnhcih
+651dfm79qqvcZqMKf3E/n4PrUiV5rE0cldUNwB7AEmDqgb/CDXj8IVWJ9q1+WDrT4Ggfy/utiz13
+U//YLpfzjblAzNxhaBbLMB/P5tt+3XfOz3aw16HC0qg4mqSJTivH2r7g12zth2Nd9wEHKo5NafPM
+q5ezKNv1bGUNIGJnkJ5hfoGIuYPO5haUQVZok6iqiC79XCUIQ3CwNEnIfDR0lBCv9ZhHJekF4V7X
+d20tCWy4hzBphrYmlACbw75gaKXHOYY1rhGjQqBOcNkwyeVAWi455X3Xt6ze5bcvIJQiwqln3yD9
+lpgysk+alz6DEIJEXe7uyIQ6LaPqysdAl1Vk29WhGU3HPnGY1Gf82e55lmRmGpY+dDiVzwVtsXuS
+EP2vJtgJEh6r2UuC8xM0yNfQIN+ZBvkBaGhELWknBe1R13Ov6SCllgXSem09yJrRzlJCGvxEA0NY
+2pyJJPINNDBHUnESB0HwKRwEFMdx8CyVJ3CQEp3Agb5qOtD3Hg/0I8yHjjGMcE/k4HVNN/SobqjA
+bQuhrO0QkNgTBEpG/80HySQlzMMCv4EI7HDOTxOBxckBIfEJIuCxmgMR7A99V/RvjwcAAA==
+[END GIPS TRACEBACK]

@@ -1,0 +1,196 @@
+#================================================================
+# Gene Identification via Phenotype Sequencing - Result File
+#
+# Job id: c13d927fa989715a47ab9ec0c48aaf93
+# Completion time:2014-07-23 11:58:33
+# Feature option '-T gips'
+#================================================================
+
+[Study Effectiveness]
+Chance to report true phenotype-associated genes 
+If phenotype is recessive: 0.6
+If phenotype is  dominant: 0.515
+
+Significance of violating Mendelian phenotype assumption
+If phenotype is recessive: 0.00225
+If phenotype is  dominant: 0.987
+
+Expected number of random genes that may be reported: 1.869
+
+[Candidate Gene List]
+#Details on the variants they harbor can be found in CANDIDATE_GENES.txt
+GENE_ID	GENE_NAME	Chr	EFF_REGION_LENGHT	SIGNIFICANCE	NUM_VARIANT	NUM_SAMPLE
+gene30694	ALPK2	Chr18	6561	2.79174E-5	7	7
+gene22350	MLL2	Chr12	16826	0.0063278	9	7
+gene3262	OBSCN	Chr1	28446	0.07042	14	7
+gene31160	MUC16	Chr19	43856	0.11724	24	8
+gene5348	TTN	Chr2	115881	0.67339	24	9
+
+[Sample Specific Sensitivity and Specificity]
+Variant Calling Sensitivity (VCS)
+SAMPLE_NAME	HOMO_VCS	HETERO_VCS
+SRS086451	0.82	0.809
+SRS086452	0.858	0.859
+SRS086453	0.818	0.815
+SRS086454	0.857	0.855
+SRS086455	0.581	0.579
+SRS086456	0.831	0.759
+SRS086457	0.804	0.728
+SRS086458	0.775	0.707
+SRS086459	0.795	0.741
+SRS086460	0.837	0.764
+
+False Ignorance Rate (FIR)
+SAMPLE_NAME	FIR_FUNCTION	FIR_STUDY	FIR
+SRS086451	0.144	4.055E-4	0.144
+SRS086452	0.144	4.383E-4	0.144
+SRS086453	0.144	4.125E-4	0.144
+SRS086454	0.144	4.458E-4	0.144
+SRS086455	0.144	2.398E-4	0.144
+SRS086456	0.144	4.058E-4	0.144
+SRS086457	0.144	3.896E-4	0.144
+SRS086458	0.144	3.715E-4	0.144
+SRS086459	0.144	3.979E-4	0.144
+SRS086460	0.144	4.06E-4	0.144
+
+Sample Variant Detection Sensitivity (VDS) (Measurement of sensitivity)
+SAMPLE_NAME	HOMO_VDS	HETERO_VDS
+SRS086451	0.701	0.691
+SRS086452	0.733	0.734
+SRS086453	0.699	0.696
+SRS086454	0.732	0.731
+SRS086455	0.496	0.495
+SRS086456	0.71	0.648
+SRS086457	0.687	0.622
+SRS086458	0.662	0.604
+SRS086459	0.679	0.633
+SRS086460	0.715	0.653
+
+Sample Background  Variant  Frequency (BVF) (Measurement of specificity)
+SAMPLE_NAME	BVF
+SRS086451	1.352E-5
+SRS086452	1.858E-5
+SRS086453	1.709E-5
+SRS086454	1.674E-5
+SRS086455	2.013E-5
+SRS086456	1.844E-5
+SRS086457	1.763E-5
+SRS086458	2.289E-5
+SRS086459	3.113E-5
+SRS086460	1.887E-5
+
+#----------------------------------------------------------------
+# [Protocol]
+#----------------------------------------------------------------
+# [GLOBAL]
+# PROJECT :Kabuki                     
+# SNPEFF_GENOME_VERSION:GRCh37.69        
+# SNPEFF  :      /nas2/zzx/PaperProject/Kabuki/Ref/snpEff_3_1                #SNPEff path 
+# REF_GENOME_ANNOTATION.GFF :   /nas2/zzx/PaperProject/Kabuki/Ref/HomoSapiens.gff3               #genome GFF file Path
+# VAR_CALL_SCRIPT :   /nas2/zzx/PaperProject/Kabuki/Script/callerscriptqQ20q30_0716       #caller script (following GIPS requirement) path
+# EFF_REGION  : CDS|SpliceSite=2     
+# VAR_FILTERS :  EBA                    #filter strategy 
+# SCORE_MATRIX: BLOSUM80
+# CANDIDATE_CRITERIA :     7           #criteria to report candidate gene
+# NUM_SIM_SNPS : 5000        #number of artificial snp to evaluate vcs
+# MAX_VAR_DENSITY   : 0
+# 
+# [SAMPLE_LIST]
+# SRS086451
+# SRS086452
+# SRS086453
+# SRS086454
+# SRS086455
+# SRS086456
+# SRS086457
+# SRS086458
+# SRS086459
+# SRS086460
+#  
+# [SAMPLE]
+# SAMPLE_NAME :SRS086451
+# SAMPLE.VCF  : /nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086451/SRS086451samtoolsQ20q30d10.vcf
+# READS_ALIGNMENT.SAM :/nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086451/SRS086451.sam
+# 
+# 
+# 
+# [SAMPLE]
+# SAMPLE_NAME :SRS086452
+# SAMPLE.VCF  :/nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086452/SRS086452samtoolsQ20q30d10.vcf
+# READS_ALIGNMENT.SAM :/nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086452/SRS086452.sam
+# 
+# 
+# [SAMPLE]
+# SAMPLE_NAME :SRS086453
+# SAMPLE.VCF  :/nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086453/SRS086453samtoolsQ20q30d10.vcf
+# READS_ALIGNMENT.SAM :/nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086453/SRS086453.sam
+# 
+# [SAMPLE]
+# SAMPLE_NAME :SRS086454
+# SAMPLE.VCF  :/nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086454/SRS086454samtoolsQ20q30d10.vcf
+# READS_ALIGNMENT.SAM :/nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086454/SRS086454.sam
+# 
+# 
+# [SAMPLE]
+# SAMPLE_NAME :SRS086455
+# SAMPLE.VCF  :/nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086455/SRS086455samtoolsQ13q20d10.vcf
+# READS_ALIGNMENT.SAM :/nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086455/SRS086455.sam
+# VAR_CALL_SCRIPT :   /nas2/zzx/PaperProject/Kabuki/Script/callerscriptqQ13q20_0716 
+# 
+# 
+# 
+# [SAMPLE]
+# SAMPLE_NAME :SRS086456
+# SAMPLE.VCF  :/nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086456/SRS086456samtoolsQ20q30d10.vcf
+# READS_ALIGNMENT.SAM :/nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086456/SRS086456.sam
+# 
+# 
+# [SAMPLE]
+# SAMPLE_NAME :SRS086457
+# SAMPLE.VCF  :/nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086457/SRS086457samtoolsQ20q30d10.vcf
+# READS_ALIGNMENT.SAM :/nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086457/SRS086457.sam
+# 
+# [SAMPLE]
+# SAMPLE_NAME :SRS086458
+# SAMPLE.VCF  :/nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086458/SRS086458samtoolsQ20q30d10.vcf
+# READS_ALIGNMENT.SAM :/nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086458/SRS086458.sam
+# 
+# [SAMPLE]
+# SAMPLE_NAME :SRS086459
+# SAMPLE.VCF  :/nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086459/SRS086459samtoolsQ20q30d10.vcf
+# READS_ALIGNMENT.SAM :/nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086459/SRS086459.sam
+# 
+# [SAMPLE]
+# SAMPLE_NAME :SRS086460
+# SAMPLE.VCF  :/nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086460/SRS086460samtoolsQ20q30d10.vcf
+# READS_ALIGNMENT.SAM :/nas2/zzx/Factor/sra/ExonSeqSuc/SRP003183/SRS086460/SRS086460.sam
+#----------------------------------------------------------------
+#
+#
+
+# Caution: Do not modify the below section
+[GIPS TRACEBACK]
+H4sIAAAAAAAAAMWYa4/aRhSGv/u/FOZ+ZpD6wQuGpeVWTFaJosiaa0tKFhbYKIr64zsLiXGUNZuW
+AB+QXjyaOePx4/ec47e9wfgmHbxLJtPxb1l71vpdm8e/50k+mmTdbtHLRuNhVtxl07w/HrV60/Zf
+FBpCJdOsHExHo/EsncXxRq/bbTXv9YY0P3/+1JzolV9P1sv33m6b+3WbUx+at8sPy1yv5v5+0/gz
+BJo8RZpmvacI7U7+T75azK3P51v/K0nu0mnR7Q9mcQet7CZN2umo0++ks6xoT/vxaj9twZfd/kDo
+zf0qC6GgBU5uXw3TURHv6JbCf7+HtQ/Fl9NYYVpsl6ti4T/6xf6GBv2bYnIbj2f2ZhJPL53Wrdjr
+T/LGe72O622Wj2vrm+3F/H5u9eJOr+f6ftv4aEPyNk+Hk0FWDPr57F2ST3MkBeO4VKRUtFSsVLxU
+olRQKlkq9VUJlHwNGaPtQ4/SYdaqRN5dbdy1q2fV1Xa7XDc3a93MPi3vc/+QP9pmPp0gRLGkzXL6
+QW30h+1yudj8QdADRQ6j3f1Os7STF+mg3xsNs9GsEaOdFqYR4+xIaqeDQZFHciazFx5ybtfz1bYZ
+n8TCrze7Pw/7XRYIcDzJ9niaFcN0Nu2/bt0MxvmroUTJfuli2OEtDJxzBlgCTuI57a4pS71zARnE
+gwPsAydUOc0VAqDeWKa0s+xp9XS4mwAmSKwo9UwSHYK1zBjhkSPIYHAUY+0AFDHJ6NWwyPvxN5rk
+LY4QSobp6yfyik42yvuzNy2UZPmsHzecdYqbu24LNygn2S+8cvl2PBwXd528hRqAcHUgi2/a1yGh
+8Hdz2k8DkjwzZT+C1HGiyGlEkYM6J1GVMNcgigInQhCKKkQBo2Alc4FrQQMXXBJrqODKgRGSMB5Z
+Y4ZeBijJZT1QlNYBBZTVABXdqY4o/gJR9DSiKuqcRFXUNYgiBEkWCZKIlERhI2xQOhhDkCcIMYRt
+ZMprhkQIwUgMAROtL4MUIFWLlFCq3qNEDVK4HinMjyPFTkOKHdQ5kaqEuYpJxZQGggtMZImUFBob
+RgJyQVkwzHGDOQ0x+9mYH4l0wvtoZO4ySAlgR1zquRz2Zagu7cVqqtalXkCKn4YUP6gSKUwfyE9G
+qhLmZyG12+WPIkVppIkQLmmJFHNCBZBSeKq9NUACBky1schIRgwCL3mQ/uBSMmAVrHPCYG0tthwc
+kXEJKg14ZpwJRiPH/gdRpIEwrSWKfetEVaKY+n7ODhsunyu+9kPwQt4TpxElDuqcJlUJcxWT2rlL
+fNkFK4ky0ZAcMO6Fj/bllOMcEW+IZKCZ1xwTzBXR7EKlFDtiUvWlOZM1HkVriYKXKik4jSg4qHMS
+VQlzFaJE7JioQgirkiiKtKHUMeyj1zihY9eHVTQsLwCkYk4F6SiLEy5TSYl6kxLyuRS2HyKkBinE
+apGKuf8oUvI0pORBnROpSpirFOfAJRCIHnVo92JB4TGOHTj2SMeOT3BmrNMSQEtvGQvKOOn4Rfo9
+0ogJtB4pUVtJCVTT7wHwWqQQHEdKnYaUOqhzIlUJcxWXij2cAvT0YapEyqFAlAJpbcx6yDAhsUME
+4j/qOPLYBALeqov0e7SBj5RSAur7vW+/LlSQUvVIxffqGFICnYSUQAd1RqSqYa6BFEMKI0QIMHH4
+hICABuMVIwBMIy2tNsLE/o96Hkt15zANCBy6UCkl4Ugp9Rwee6R4DVKS1vZ7INi/p6Dx7VEZAAA=
+[END GIPS TRACEBACK]

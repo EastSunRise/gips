@@ -1,0 +1,32 @@
+#================================================================
+#
+# Gene Identification via Phenotype Sequencing - Candidate Gene File
+# Job id: a0db38e631fea61ead7b300b6c2b9ef7   Time:2015-05-07 14:09:22
+#================================================================
+
+[Candidate Gene List]
+GENE_ID	GENE_NAME	Chr	EFF_REGION_LENGHT	SIGNIFICANCE	NUM_VARIANT	NUM_SAMPLE
+LOC_Os02g56510	LOC_Os02g56510	Chr2	2504	8.63495E-7	3	3
+LOC_Os04g13510	LOC_Os04g13510	Chr4	4580	5.21813E-6	11	3
+
+----------------------------------------------------------------
+[Candidate gene: LOC_Os02g56510]
+#SAMPLE	CHROM	POS	ID	REF	ALT		DP	GT	EFF
+249	Chr2	34614218	.	G	A	40	1/1	stop_gained
+28	Chr2	34611907	.	C	T	15	1/1	missense_variant(A:V)
+29	Chr2	34614585	.	C	T	24	1/1	missense_variant(H:Y)
+
+----------------------------------------------------------------
+[Candidate gene: LOC_Os04g13510]
+#SAMPLE	CHROM	POS	ID	REF	ALT		DP	GT	EFF
+249	Chr4	7537193	.	A	G	33	0/1	missense_variant(I:T)
+28	Chr4	7533900	.	G	A	46	0/1	missense_variant(P:L)
+28	Chr4	7533978	.	A	T	52	0/1	missense_variant(I:N)
+28	Chr4	7537305	.	C	T	54	0/1	missense_variant(E:K)
+28	Chr4	7537320	.	G	A	48	0/1	stop_gained
+29	Chr4	7535269	.	T	G	30	0/1	missense_variant(K:Q)
+29	Chr4	7535979	.	A	G	38	0/1	missense_variant(L:P)
+29	Chr4	7536210	.	G	A	52	0/1	missense_variant(A:V)
+29	Chr4	7536246	.	C	T	45	0/1	missense_variant(G:D)
+29	Chr4	7536300	.	G	T	44	0/1	missense_variant(P:Q)
+29	Chr4	7536363	.	T	G	45	0/1	missense_variant(Q:P)

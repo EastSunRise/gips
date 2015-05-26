@@ -1,0 +1,136 @@
+#================================================================
+# Gene Identification via Phenotype Sequencing - Result File
+#
+# Job id: c4681a2854a97c9bc9daf15858ca8591
+# Completion time:2015-05-22 17:41:45
+# Feature option '-T gips'
+#================================================================
+
+[Study Effectiveness]
+Chance to report true phenotype-associated genes 
+If phenotype is recessive: 0.755
+If phenotype is  dominant: 0.533
+
+Significance of violating Mendelian phenotype assumption
+If phenotype is recessive: 1.0
+If phenotype is  dominant: 1.0
+
+Expected number of random genes that may be reported: 2.485
+
+[Candidate Gene List]
+#Details on the variants they harbor can be found in CANDIDATE_GENES.txt
+GENE_ID	GENE_NAME	Chr	EFF_REGION_LENGHT	SIGNIFICANCE	NUM_VARIANT	NUM_SAMPLE
+LOC_Os12g35520	LOC_Os12g35520	Chr12	1224	2.84938E-6	4	3
+LOC_Os12g26100	LOC_Os12g26100	Chr12	1272	3.19512E-6	18	3
+LOC_Os03g64310	LOC_Os03g64310	Chr3	1312	3.50358E-6	6	3
+LOC_Os06g39752	LOC_Os06g39752	Chr6	1402	4.26818E-6	3	3
+LOC_Os04g02550	LOC_Os04g02550	Chr4	1446	4.67904E-6	17	3
+LOC_Os08g05950	LOC_Os08g05950	Chr8	1470	4.91376E-6	7	3
+LOC_Os04g08690	LOC_Os04g08690	Chr4	1489	5.105E-6	4	3
+LOC_Os10g31380	LOC_Os10g31380	Chr10	1542	5.6643E-6	4	3
+LOC_Os06g39744	LOC_Os06g39744	Chr6	1558	5.84076E-6	5	3
+LOC_Os10g07040	LOC_Os10g07040	Chr10	2201	1.62761E-5	30	3
+LOC_Os04g35000	LOC_Os04g35000	Chr4	2571	2.5768E-5	6	3
+LOC_Os11g12710	LOC_Os11g12710	Chr11	2717	3.03315E-5	4	3
+LOC_Os06g38270	LOC_Os06g38270	Chr6	3166	4.76017E-5	23	3
+LOC_Os04g51840	LOC_Os04g51840	Chr4	3180	4.82237E-5	7	3
+LOC_Os10g15210	LOC_Os10g15210	Chr10	3194	4.88511E-5	11	3
+LOC_Os10g13550	LOC_Os10g13550	Chr10	3447	6.11227E-5	3	3
+LOC_Os02g56510	LOC_Os02g56510	Chr2	3504	6.41391E-5	4	3
+LOC_Os08g06280	LOC_Os08g06280	Chr8	3529	6.54921E-5	10	3
+LOC_Os07g30650	LOC_Os07g30650	Chr7	3609	6.99465E-5	6	3
+LOC_Os11g17900	LOC_Os11g17900	Chr11	3846	8.42889E-5	3	3
+LOC_Os04g02520	LOC_Os04g02520	Chr4	4484	1.32047E-4	19	3
+LOC_Os05g51770	LOC_Os05g51770	Chr5	4780	1.59108E-4	6	3
+LOC_Os03g64320	LOC_Os03g64320	Chr3	4819	1.6292E-4	6	3
+LOC_Os03g23760	LOC_Os03g23760	Chr3	4838	1.64798E-4	5	3
+LOC_Os02g32690	LOC_Os02g32690	Chr2	5330	2.18414E-4	14	3
+LOC_Os11g22430	LOC_Os11g22430	Chr11	5330	2.18414E-4	6	3
+LOC_Os04g49890	LOC_Os04g49890	Chr4	5346	2.20324E-4	6	3
+LOC_Os05g06280	LOC_Os05g06280	Chr5	5489	2.37867E-4	3	3
+LOC_Os04g13510	LOC_Os04g13510	Chr4	5578	2.49226E-4	22	3
+LOC_Os04g20790	LOC_Os04g20790	Chr4	5781	2.76426E-4	5	3
+
+[Sample Specific Sensitivity and Specificity]
+Variant Calling Sensitivity (VCS)
+SAMPLE_NAME	HOMO_VCS	HETERO_VCS
+29	0.886	0.801
+28	0.94	0.839
+249	0.952	0.832
+
+False Ignorance Rate (FIR)
+SAMPLE_NAME	FIR_FUNCTION	FIR_STUDY	FIR
+29	0.0152	1.897E-5	0.0152
+28	0.0152	2.606E-5	0.0152
+249	0.0152	2.594E-5	0.0152
+
+Sample Variant Detection Sensitivity (VDS) (Measurement of sensitivity)
+SAMPLE_NAME	HOMO_VDS	HETERO_VDS
+29	0.872	0.788
+28	0.925	0.826
+249	0.937	0.819
+
+Sample Background  Variant  Frequency (BVF) (Measurement of specificity)
+SAMPLE_NAME	BVF
+29	9.966E-6
+28	1.733E-5
+249	9.197E-6
+
+#----------------------------------------------------------------
+# [Protocol]
+#----------------------------------------------------------------
+# [GLOBAL]
+# PROJECT :Rice                     
+# REF_GENOME_ANNOTATION.GFF : /nas1/zzx/RiceData/GIPS/Rice/Ref/all(rice).gff3
+# SNPEFF_GENOME_VERSION     :  rice7
+# SNPEFF  :    /nas1/zzx/RiceData/snpEff_4.1
+# CANDIDATE_CRITERIA :  3  
+# VAR_CALL_SCRIPT :   /nas1/zzx/RiceData/GIPS/Rice/Script/2015-04-26Q13_q0.sh
+# EFF_REGION  : CDS|splicesite=2|Promoter=1000
+# VAR_FILTERS :   EAB
+# SCORE_MATRIX: DEFAULT
+# MAX_AA_SCORE: 
+# NUM_SIM_SNPS : 5000
+# MAX_VAR_DENSITY:2
+# 
+# [SAMPLE_LIST]
+# 29
+# 28
+# 249
+# 
+# [SAMPLE]
+# SAMPLE_NAME : 28
+# SAMPLE.VCF  : /nas1/zzx/RiceData/out/28/samtools_Q13_q0_noDPFiltered.vcf
+# READS_ALIGNMENT.SAM : /nas1/zzx/RiceData/out/28/btout.sam 
+#  
+# [SAMPLE]
+# SAMPLE_NAME : 29
+# SAMPLE.VCF  : /nas1/zzx/RiceData/out/29/samtools_Q13_q0_noDPFiltered.vcf
+# READS_ALIGNMENT.SAM : /nas1/zzx/RiceData/out/29/btout.sam
+# 
+#   
+# [SAMPLE]
+# SAMPLE_NAME : 249
+# SAMPLE.VCF  : /nas1/zzx/RiceData/out/249/samtools_Q13_q0_noDPFiltered.vcf
+# READS_ALIGNMENT.SAM : /nas1/zzx/RiceData/out/249/btout.sam
+# 
+#----------------------------------------------------------------
+#
+#
+
+# Caution: Do not modify the below section
+[GIPS TRACEBACK]
+H4sIAAAAAAAAANWUTU/jMBCG7/4luwdSf8WxI3EwiVuyStJsEioQQpbz4aVSadm2rFaIH79uCywS
+LUKIC4dEsV/Pm8nMk7kcpeMTmV6Bohz/UFEdltO2B1VeqOFQj1Q+zpSeqLJKxnm4dFIASvUsyDwf
+17J2mjcaDsPB3KzQ4P7+72BjEpu1GYySotquBmVvB2Y2+7Yx+e79spaAzStKNdpYR3H1sLqdOW01
+XffH+KFYLm4W6355jCCEYCJLPUzS2iUSKnkCIpnHSSxrpaMycbuJDMlj0vuyWM1vlbWaegikyclH
+s1/2Vo/K6JoE3i0iu0/Y2BWnzq++KFyhZBnO72YzcFnJrEiVTpOqvgJYAMwBpgI8CVfg8UAuMxU6
+fbf0JtHePBZ36wEWg5W5WS8Ws5X+iYj+DfV8ERfD6cxVqe+8P611rZFxpWWajPJM5bXnXN+wa9bu
+wXOm2/JGMk115cpZ1G+XomqX01tnAJF/BOkRZrtsvNU1qKJxqXQm6zI5D2M1lGdpDXaeOov9kFnj
+94IRzASDHaPIEkgsbk3QU0Mpsx1uCA464OqwDaAYUWxM51sOSY847rhtWmax30BhDbGt8f2mM5v6
+bQMIpYgwKtwd5GeZrhJ35UUV+huMMnm+6ZGOVV4l9UWIgarqxOWrYn0yGYbCE4ypI/Zi+3ScjfUk
+rkLo8eDl+VPluHuSAs5fxUTbGM72xOwkiA7gwN+DA/9cHPhXwKGnsGGN7Qh3KATUtVkY4UDoMeNd
+0xDOG9G3Qf+Mg48wDxgjnPAP4IC8gBB15O/HQWD/EA4cv0Zo23NBD9JAxAEa6LumA/3k8UC/xHxo
+fW4QRn2HCOmJgG4sGCMa2HJIoYvtGr9jRvwfD9znlPgCu1/5I+MBieDgeBAkOMgDEgd48PeNlEcg
+8D+HxcqvnAcAAA==
+[END GIPS TRACEBACK]
