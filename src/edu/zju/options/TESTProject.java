@@ -91,14 +91,19 @@ public class TESTProject {
                      + "\n######################################################";
              //common.CExecutor.println(note);
              scriptOutFile.write(note+"\n\n");
-             scriptOutFile.write("# change .sam file to .bam file"
-                     + "\n samtools view -bS \"$1\" > "+Init.getTemporaryFolderPath()+s+"sample.bam"
+             scriptOutFile.write(""
+                     + "# please set the absolute path of samtools and bcftools. No blank space in the following two lines. "
+                     + "\n samtools="
+                     + "\n bcftools="
+                     + ""
+                     + "# change .sam file to .bam file"
+                     + "\n $samtools view -bS \"$1\" > "+Init.getTemporaryFolderPath()+s+"sample.bam"
                      + "\n# sort"
-                     + "\n samtools sort "+Init.getTemporaryFolderPath()+s+"sample.bam "+Init.getTemporaryFolderPath()+s+"sample.sort"
+                     + "\n $samtools sort "+Init.getTemporaryFolderPath()+s+"sample.bam "+Init.getTemporaryFolderPath()+s+"sample.sort"
                      + "\n# index"
-                     + "\n samtools index "+Init.getTemporaryFolderPath()+s+"sample.sort.bam"
+                     + "\n $samtools index "+Init.getTemporaryFolderPath()+s+"sample.sort.bam"
                      + "\n# call"
-                     + "\n samtools mpileup -ugf "+Init.getRefDirectory()+s+"Test.fa "+ Init.getTemporaryFolderPath()+s+"sample.sort.bam"+" -Q 13 -q 30 -go - | bcftools call -vmO v -o "+Init.getTemporaryFolderPath()+s+"sample.bvf"
+                     + "\n $samtools mpileup -ugf "+Init.getRefDirectory()+s+"Test.fa "+ Init.getTemporaryFolderPath()+s+"sample.sort.bam"+" -Q 13 -q 30 -go - | $bcftools call -vmO v -o \"$2\""
                 //     + "\n bcftools view "+Init.getTemporaryFolderPath()+s+"sample.bvf | vcfutils.pl varFilter -d 0 -w 0 > \"$2\""
                      + "");
              scriptOutFile.closeOutput();

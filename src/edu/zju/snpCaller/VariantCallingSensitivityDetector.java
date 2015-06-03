@@ -58,7 +58,6 @@ public class VariantCallingSensitivityDetector {
                                 continue;
                         }
                         snpVCFChr=line.split("\t")[0].trim().toString();
-                        
                         try {
                             snpVCFPos=Integer.valueOf(line.split("\t")[1].trim().toString());
                         } catch (Exception e) {
