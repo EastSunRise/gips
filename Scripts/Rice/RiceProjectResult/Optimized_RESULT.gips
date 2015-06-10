@@ -26,38 +26,38 @@ LOC_Os04g13510	LOC_Os04g13510	Chr4	4580	5.21813E-6	11	3
 [Sample Specific Sensitivity and Specificity]
 Variant Calling Sensitivity (VCS)
 SAMPLE_NAME	HOMO_VCS	HETERO_VCS
-29	0.808	0.766
-28	0.913	0.881
-249	0.907	0.85
+M29	0.808	0.766
+M28	0.913	0.881
+M249	0.907	0.85
 
 False Ignorance Rate (FIR)
 SAMPLE_NAME	FIR_FUNCTION	FIR_STUDY	FIR
-29	0.197	1.147E-5	0.197
-28	0.197	1.744E-5	0.197
-249	0.197	1.668E-5	0.197
+M29	0.197	1.147E-5	0.197
+M28	0.197	1.744E-5	0.197
+M249	0.197	1.668E-5	0.197
 
 Sample Variant Detection Sensitivity (VDS) (Measurement of sensitivity)
 SAMPLE_NAME	HOMO_VDS	HETERO_VDS
-29	0.648	0.614
-28	0.732	0.707
-249	0.727	0.682
+M29	0.648	0.614
+M28	0.732	0.707
+M249	0.727	0.682
 
 Sample Background  Variant  Frequency (BVF) (Measurement of specificity)
 SAMPLE_NAME	BVF
-29	3.58E-6
-28	5.847E-6
-249	2.666E-6
+M29	3.58E-6
+M28	5.847E-6
+M249	2.666E-6
 
 #----------------------------------------------------------------
 # [Protocol]
 #----------------------------------------------------------------
 # [GLOBAL]
 # PROJECT :Rice                     
-# REF_GENOME_ANNOTATION.GFF : /nas1/zzx/RiceData/GIPS/Rice/Ref/all(rice).gff3
+# REF_GENOME_ANNOTATION.GFF : /path/to/GIPS-Rice/Ref/all(rice).gff3
 # SNPEFF_GENOME_VERSION     :  rice7
 # SNPEFF  :    /nas1/zzx/RiceData/snpEff_4.1
 # CANDIDATE_CRITERIA :  3  
-# VAR_CALL_SCRIPT :   /nas1/zzx/RiceData/GIPS/Rice/Script/2015-04-26Q13_q0.sh
+# VAR_CALL_SCRIPT :   /path/to/GIPS-Rice/Script/2015-04-26Q13_q0.sh
 # EFF_REGION  : CDS|splicesite=2
 # VAR_FILTERS :   EABC
 # SCORE_MATRIX: PAM120
@@ -72,28 +72,21 @@ SAMPLE_NAME	BVF
 # 
 # 
 # [SAMPLE]
-# SAMPLE_NAME : 28
-# SAMPLE.VCF  : /nas1/zzx/RiceData/out/28/samtools_Q15_q20_noDPFiltered.vcf
-# READS_ALIGNMENT.SAM : /nas1/zzx/RiceData/out/28/btout.sam 
+# SAMPLE_NAME : M28
+# SAMPLE.VCF  : /path/to/GIPS-Rice/Data/M28/samtools_Q15_q20_noDPFiltered.vcf
+# READS_ALIGNMENT.SAM : /path/to/GIPS-Rice/Data/M28/btout.sam 
 # 
 #  
 # [SAMPLE]
-# SAMPLE_NAME : 29
-# SAMPLE.VCF  : /nas1/zzx/RiceData/out/29/samtools_Q15_q20_noDPFiltered.vcf
-# READS_ALIGNMENT.SAM : /nas1/zzx/RiceData/out/29/btout.sam
+# SAMPLE_NAME : M29
+# SAMPLE.VCF  : /path/to/GIPS-Rice/Data/M29/samtools_Q15_q20_noDPFiltered.vcf
+# READS_ALIGNMENT.SAM : /path/to/GIPS-Rice/Data/M29/btout.sam
 # 
 #   
-# #[SAMPLE]
-# #SAMPLE_NAME : 58
-# #SAMPLE.VCF  : /nas1/zzx/RiceData/out/58/samtools_Q15_q20_noDPFiltered.vcf
-# #READS_ALIGNMENT.SAM : /nas1/zzx/RiceData/out/58/btout.sam
-# #ESTIMATED_HOMO_VCS:0.8
-# #ESTIMATED_HETERO_VCS:0.8
-#   
 # [SAMPLE]
-# SAMPLE_NAME : 249
-# SAMPLE.VCF  : /nas1/zzx/RiceData/out/249/samtools_Q15_q20_noDPFiltered.vcf
-# READS_ALIGNMENT.SAM : /nas1/zzx/RiceData/out/249/btout.sam
+# SAMPLE_NAME : M249
+# SAMPLE.VCF  : /path/to/GIPS-Rice/Data/M249/samtools_Q15_q20_noDPFiltered.vcf
+# READS_ALIGNMENT.SAM : /path/to/GIPS-Rice/Data/M249/btout.sam
 # 
 # 
 #----------------------------------------------------------------

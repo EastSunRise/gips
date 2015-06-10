@@ -40,300 +40,300 @@ LOC_Os04g20790	LOC_Os04g20790	Chr4	5781	2.76426E-4	5	3
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os12g35520]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr12	21600397	.	G	GCTC	137	0/1	
-249	Chr12	21600398	.	G	GTCGCTTGT	135	0/1	
-28	Chr12	21600815	.	C	A	32	1/1	
-29	Chr12	21600815	.	CCC	CAAGGCCCACC	4	1/1	
+M249	Chr12	21600397	.	G	GCTC	137	0/1	
+M249	Chr12	21600398	.	G	GTCGCTTGT	135	0/1	
+M28	Chr12	21600815	.	C	A	32	1/1	
+M29	Chr12	21600815	.	CCC	CAAGGCCCACC	4	1/1	
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os12g26100]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr12	15184408	.	A	C	42	0/1	
-249	Chr12	15184415	.	A	C	40	0/1	
-249	Chr12	15184552	.	T	A	37	0/1	
-28	Chr12	15184012	.	T	C	71	0/1	missense_variant(Q:R)
-28	Chr12	15184018	.	G	A	71	0/1	missense_variant(A:V)
-28	Chr12	15184231	.	C	A	65	0/1	
-28	Chr12	15184882	.	C	T	68	0/1	
-28	Chr12	15184894	.	G	A	78	0/1	
-28	Chr12	15184907	.	G	A	87	0/1	
-28	Chr12	15184915	.	C	T	85	0/1	
-28	Chr12	15184930	.	A	G	81	0/1	
-28	Chr12	15184961	.	T	TG	79	0/1	
-29	Chr12	15185023	.	T	C	39	0/1	
-29	Chr12	15185041	.	C	T	39	0/1	
-29	Chr12	15185048	.	A	G	38	0/1	
-29	Chr12	15185049	.	G	A	38	0/1	
-29	Chr12	15185055	.	G	C	37	0/1	
-29	Chr12	15185078	.	G	A	36	0/1	
+M249	Chr12	15184408	.	A	C	42	0/1	
+M249	Chr12	15184415	.	A	C	40	0/1	
+M249	Chr12	15184552	.	T	A	37	0/1	
+M28	Chr12	15184012	.	T	C	71	0/1	missense_variant(Q:R)
+M28	Chr12	15184018	.	G	A	71	0/1	missense_variant(A:V)
+M28	Chr12	15184231	.	C	A	65	0/1	
+M28	Chr12	15184882	.	C	T	68	0/1	
+M28	Chr12	15184894	.	G	A	78	0/1	
+M28	Chr12	15184907	.	G	A	87	0/1	
+M28	Chr12	15184915	.	C	T	85	0/1	
+M28	Chr12	15184930	.	A	G	81	0/1	
+M28	Chr12	15184961	.	T	TG	79	0/1	
+M29	Chr12	15185023	.	T	C	39	0/1	
+M29	Chr12	15185041	.	C	T	39	0/1	
+M29	Chr12	15185048	.	A	G	38	0/1	
+M29	Chr12	15185049	.	G	A	38	0/1	
+M29	Chr12	15185055	.	G	C	37	0/1	
+M29	Chr12	15185078	.	G	A	36	0/1	
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os03g64310]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr3	36347342	.	GTAT	GTATCTAT	34	0/1	
-249	Chr3	36347351	.	TATG	TATGGATG	33	0/1	
-28	Chr3	36347346	.	GTAT	GTATTTAT	41	0/1	
-28	Chr3	36347359	.	TATG	TATGGATG	38	0/1	
-28	Chr3	36347442	.	CCTCTCTCTCTCTCTCTCTCTCTC	CCTCTCTCTCTCTCTCTCTCTC	33	0/1	
-29	Chr3	36347363	.	TATG	TATGAATG	21	0/1	
+M249	Chr3	36347342	.	GTAT	GTATCTAT	34	0/1	
+M249	Chr3	36347351	.	TATG	TATGGATG	33	0/1	
+M28	Chr3	36347346	.	GTAT	GTATTTAT	41	0/1	
+M28	Chr3	36347359	.	TATG	TATGGATG	38	0/1	
+M28	Chr3	36347442	.	CCTCTCTCTCTCTCTCTCTCTCTC	CCTCTCTCTCTCTCTCTCTCTC	33	0/1	
+M29	Chr3	36347363	.	TATG	TATGAATG	21	0/1	
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os06g39752]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr6	23586823	.	G	A	356	1/1	
-28	Chr6	23586508	.	C	T	501	1/1	missense_variant(G:D)
-29	Chr6	23586769	.	T	C	216	1/1	missense_variant(K:R)
+M249	Chr6	23586823	.	G	A	356	1/1	
+M28	Chr6	23586508	.	C	T	501	1/1	missense_variant(G:D)
+M29	Chr6	23586769	.	T	C	216	1/1	missense_variant(K:R)
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os04g02550]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr4	946934	.	G	T	72	0/1	
-249	Chr4	946935	.	C	T	71	0/1	
-249	Chr4	946940	.	G	C	67	0/1	
-249	Chr4	946946	.	G	C	62	0/1	
-249	Chr4	946949	.	T	C	59	0/1	
-249	Chr4	947027	.	G	C	73	0/1	
-28	Chr4	947721	.	G	A	106	0/1	
-29	Chr4	946150	.	T	C	52	0/1	missense_variant(N:D)
-29	Chr4	946219	.	T	C	88	0/1	missense_variant(K:E)
-29	Chr4	946228	.	A	T	95	0/1	missense_variant(Y:N)
-29	Chr4	946757	.	A	T	92	0/1	
-29	Chr4	946758	.	A	T	91	0/1	
-29	Chr4	946796	.	A	G	82	0/1	
-29	Chr4	946830	.	G	T	74	0/1	
-29	Chr4	947633	.	A	T	51	0/1	
-29	Chr4	947636	.	G	A	50	0/1	
-29	Chr4	947678	.	A	G	43	0/1	
+M249	Chr4	946934	.	G	T	72	0/1	
+M249	Chr4	946935	.	C	T	71	0/1	
+M249	Chr4	946940	.	G	C	67	0/1	
+M249	Chr4	946946	.	G	C	62	0/1	
+M249	Chr4	946949	.	T	C	59	0/1	
+M249	Chr4	947027	.	G	C	73	0/1	
+M28	Chr4	947721	.	G	A	106	0/1	
+M29	Chr4	946150	.	T	C	52	0/1	missense_variant(N:D)
+M29	Chr4	946219	.	T	C	88	0/1	missense_variant(K:E)
+M29	Chr4	946228	.	A	T	95	0/1	missense_variant(Y:N)
+M29	Chr4	946757	.	A	T	92	0/1	
+M29	Chr4	946758	.	A	T	91	0/1	
+M29	Chr4	946796	.	A	G	82	0/1	
+M29	Chr4	946830	.	G	T	74	0/1	
+M29	Chr4	947633	.	A	T	51	0/1	
+M29	Chr4	947636	.	G	A	50	0/1	
+M29	Chr4	947678	.	A	G	43	0/1	
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os08g05950]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr8	3239885	.	G	T	36	0/1	missense_variant(Q:K)
-249	Chr8	3239893	.	G	A	40	0/1	missense_variant(A:V)
-28	Chr8	3239739	.	C	G	35	0/1	synonymous_variant(A:A)
-28	Chr8	3240264	.	T	TG	16	1/1	
-29	Chr8	3240498	.	CTGTGT	CTGT	27	0/1	
-29	Chr8	3241166	.	C	G	35	0/1	
-29	Chr8	3241174	.	C	T	38	0/1	
+M249	Chr8	3239885	.	G	T	36	0/1	missense_variant(Q:K)
+M249	Chr8	3239893	.	G	A	40	0/1	missense_variant(A:V)
+M28	Chr8	3239739	.	C	G	35	0/1	synonymous_variant(A:A)
+M28	Chr8	3240264	.	T	TG	16	1/1	
+M29	Chr8	3240498	.	CTGTGT	CTGT	27	0/1	
+M29	Chr8	3241166	.	C	G	35	0/1	
+M29	Chr8	3241174	.	C	T	38	0/1	
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os04g08690]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr4	4721439	.	A	T	3	1/1	
-28	Chr4	4721276	.	T	TTGACTTC	1	0/1	
-29	Chr4	4721299	.	T	A	1	0/1	
-29	Chr4	4721301	.	T	A	1	0/1	
+M249	Chr4	4721439	.	A	T	3	1/1	
+M28	Chr4	4721276	.	T	TTGACTTC	1	0/1	
+M29	Chr4	4721299	.	T	A	1	0/1	
+M29	Chr4	4721301	.	T	A	1	0/1	
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os10g31380]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr10	16456739	.	G	A	7	1/1	synonymous_variant(G:G)
-28	Chr10	16456874	.	T	C	9	1/1	synonymous_variant(A:A)
-29	Chr10	16456811	.	C	A	5	1/1	synonymous_variant(G:G)
-29	Chr10	16456984	.	CT	C	6	1/1	frameshift_variant
+M249	Chr10	16456739	.	G	A	7	1/1	synonymous_variant(G:G)
+M28	Chr10	16456874	.	T	C	9	1/1	synonymous_variant(A:A)
+M29	Chr10	16456811	.	C	A	5	1/1	synonymous_variant(G:G)
+M29	Chr10	16456984	.	CT	C	6	1/1	frameshift_variant
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os06g39744]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr6	23585340	.	C	T	647	1/1	
-28	Chr6	23585712	.	A	T	26	1/1	
-28	Chr6	23585713	.	A	T	26	1/1	
-29	Chr6	23584739	.	T	C	727	1/1	missense_variant(H:R)
-29	Chr6	23585506	.	A	G	840	1/1	
+M249	Chr6	23585340	.	C	T	647	1/1	
+M28	Chr6	23585712	.	A	T	26	1/1	
+M28	Chr6	23585713	.	A	T	26	1/1	
+M29	Chr6	23584739	.	T	C	727	1/1	missense_variant(H:R)
+M29	Chr6	23585506	.	A	G	840	1/1	
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os10g07040]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr10	3696315	.	GAAAAAAAAAA	GAAAAAAAA	42	0/1	
-249	Chr10	3696650	.	T	G	56	0/1	
-249	Chr10	3696659	.	A	G	51	0/1	
-249	Chr10	3698642	.	G	C	62	0/1	synonymous_variant(R:R)
-249	Chr10	3698678	.	A	G	59	0/1	synonymous_variant(Q:Q)
-249	Chr10	3698715	.	G	A	64	0/1	missense_variant(V:I)
-249	Chr10	3698744	.	C	T	50	0/1	synonymous_variant(N:N)
-28	Chr10	3696368	.	T	C	40	0/1	
-29	Chr10	3696033	.	G	A	45	0/1	
-29	Chr10	3696063	.	A	T	47	0/1	
-29	Chr10	3696064	.	T	C	47	0/1	
-29	Chr10	3696070	.	T	A	44	0/1	
-29	Chr10	3696106	.	C	A	46	0/1	
-29	Chr10	3696880	.	C	T	41	0/1	synonymous_variant(I:I)
-29	Chr10	3696895	.	G	A	42	0/1	synonymous_variant(P:P)
-29	Chr10	3696905	.	A	G	44	0/1	missense_variant(M:V)
-29	Chr10	3696909	.	T	G	45	0/1	missense_variant(F:C)
-29	Chr10	3696925	.	C	T	43	0/1	synonymous_variant(A:A)
-29	Chr10	3696949	.	A	G	53	0/1	synonymous_variant(K:K)
-29	Chr10	3696958	.	C	T	54	0/1	synonymous_variant(H:H)
-29	Chr10	3696964	.	C	T	59	0/1	synonymous_variant(T:T)
-29	Chr10	3696976	.	A	T	65	0/1	missense_variant(E:D)
-29	Chr10	3697895	.	T	C	41	0/1	synonymous_variant(T:T)
-29	Chr10	3698157	.	A	G	51	0/1	missense_variant(I:V)
-29	Chr10	3698438	.	C	T	64	0/1	synonymous_variant(L:L)
-29	Chr10	3698439	.	A	G	64	0/1	missense_variant(N:D)
-29	Chr10	3698447	.	T	C	66	0/1	synonymous_variant(F:F)
-29	Chr10	3698454	.	G	A	67	0/1	missense_variant(V:I)
-29	Chr10	3698456	.	T	C	68	0/1	synonymous_variant(V:V)
-29	Chr10	3698534	.	A	G	62	0/1	synonymous_variant(E:E)
+M249	Chr10	3696315	.	GAAAAAAAAAA	GAAAAAAAA	42	0/1	
+M249	Chr10	3696650	.	T	G	56	0/1	
+M249	Chr10	3696659	.	A	G	51	0/1	
+M249	Chr10	3698642	.	G	C	62	0/1	synonymous_variant(R:R)
+M249	Chr10	3698678	.	A	G	59	0/1	synonymous_variant(Q:Q)
+M249	Chr10	3698715	.	G	A	64	0/1	missense_variant(V:I)
+M249	Chr10	3698744	.	C	T	50	0/1	synonymous_variant(N:N)
+M28	Chr10	3696368	.	T	C	40	0/1	
+M29	Chr10	3696033	.	G	A	45	0/1	
+M29	Chr10	3696063	.	A	T	47	0/1	
+M29	Chr10	3696064	.	T	C	47	0/1	
+M29	Chr10	3696070	.	T	A	44	0/1	
+M29	Chr10	3696106	.	C	A	46	0/1	
+M29	Chr10	3696880	.	C	T	41	0/1	synonymous_variant(I:I)
+M29	Chr10	3696895	.	G	A	42	0/1	synonymous_variant(P:P)
+M29	Chr10	3696905	.	A	G	44	0/1	missense_variant(M:V)
+M29	Chr10	3696909	.	T	G	45	0/1	missense_variant(F:C)
+M29	Chr10	3696925	.	C	T	43	0/1	synonymous_variant(A:A)
+M29	Chr10	3696949	.	A	G	53	0/1	synonymous_variant(K:K)
+M29	Chr10	3696958	.	C	T	54	0/1	synonymous_variant(H:H)
+M29	Chr10	3696964	.	C	T	59	0/1	synonymous_variant(T:T)
+M29	Chr10	3696976	.	A	T	65	0/1	missense_variant(E:D)
+M29	Chr10	3697895	.	T	C	41	0/1	synonymous_variant(T:T)
+M29	Chr10	3698157	.	A	G	51	0/1	missense_variant(I:V)
+M29	Chr10	3698438	.	C	T	64	0/1	synonymous_variant(L:L)
+M29	Chr10	3698439	.	A	G	64	0/1	missense_variant(N:D)
+M29	Chr10	3698447	.	T	C	66	0/1	synonymous_variant(F:F)
+M29	Chr10	3698454	.	G	A	67	0/1	missense_variant(V:I)
+M29	Chr10	3698456	.	T	C	68	0/1	synonymous_variant(V:V)
+M29	Chr10	3698534	.	A	G	62	0/1	synonymous_variant(E:E)
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os04g35000]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr4	21270863	.	TTTGGGCCCAAAAA	T	4	1/1	
-249	Chr4	21270877	.	A	ACATTG	4	1/1	
-28	Chr4	21270864	.	TTGGGCCCAAAAAA	T	20	1/1	
-29	Chr4	21270860	.	CA	CATTGAA	27	1/1	
-29	Chr4	21270861	.	AAT	A	27	1/1	
-29	Chr4	21270863	.	T	TGAACG	5	1/1	
+M249	Chr4	21270863	.	TTTGGGCCCAAAAA	T	4	1/1	
+M249	Chr4	21270877	.	A	ACATTG	4	1/1	
+M28	Chr4	21270864	.	TTGGGCCCAAAAAA	T	20	1/1	
+M29	Chr4	21270860	.	CA	CATTGAA	27	1/1	
+M29	Chr4	21270861	.	AAT	A	27	1/1	
+M29	Chr4	21270863	.	T	TGAACG	5	1/1	
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os11g12710]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr11	7182119	.	CTTTTTTTT	CTTTTTTTTTTTTT	39	0/1	
-28	Chr11	7181320	.	G	A	217	0/1	
-29	Chr11	7181202	.	C	G	121	0/1	
-29	Chr11	7181756	.	T	TTTCGA	25	0/1	
+M249	Chr11	7182119	.	CTTTTTTTT	CTTTTTTTTTTTTT	39	0/1	
+M28	Chr11	7181320	.	G	A	217	0/1	
+M29	Chr11	7181202	.	C	G	121	0/1	
+M29	Chr11	7181756	.	T	TTTCGA	25	0/1	
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os06g38270]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr6	22639757	.	G	A	69	0/1	synonymous_variant(L:L)
-249	Chr6	22640315	.	G	A	61	0/1	missense_variant(P:S)
-249	Chr6	22640396	.	T	A	54	0/1	stop_gained
-28	Chr6	22639559	.	C	T	76	0/1	synonymous_variant(K:K)
-28	Chr6	22639565	.	T	C	78	0/1	synonymous_variant(L:L)
-28	Chr6	22639583	.	A	G	87	0/1	synonymous_variant(I:I)
-28	Chr6	22639587	.	G	A	86	0/1	missense_variant(A:V)
-28	Chr6	22641907	.	C	T	80	0/1	missense_variant(E:K)
-28	Chr6	22642280	.	G	A	84	0/1	
-28	Chr6	22642418	.	G	A	98	0/1	
-28	Chr6	22642419	.	C	T	96	0/1	
-28	Chr6	22642449	.	C	T	90	0/1	
-28	Chr6	22642466	.	G	A	88	0/1	
-28	Chr6	22642469	.	T	C	91	0/1	
-29	Chr6	22639790	.	G	A	52	0/1	synonymous_variant(N:N)
-29	Chr6	22639826	.	C	T	60	0/1	synonymous_variant(R:R)
-29	Chr6	22639832	.	C	T	57	0/1	synonymous_variant(E:E)
-29	Chr6	22639982	.	G	A	55	0/1	synonymous_variant(D:D)
-29	Chr6	22641836	.	T	C	55	0/1	synonymous_variant(E:E)
-29	Chr6	22641841	.	G	A	57	0/1	synonymous_variant(L:L)
-29	Chr6	22642109	.	T	C	30	0/1	
-29	Chr6	22642130	.	A	G	30	0/1	
-29	Chr6	22642825	.	A	AG	51	0/1	
+M249	Chr6	22639757	.	G	A	69	0/1	synonymous_variant(L:L)
+M249	Chr6	22640315	.	G	A	61	0/1	missense_variant(P:S)
+M249	Chr6	22640396	.	T	A	54	0/1	stop_gained
+M28	Chr6	22639559	.	C	T	76	0/1	synonymous_variant(K:K)
+M28	Chr6	22639565	.	T	C	78	0/1	synonymous_variant(L:L)
+M28	Chr6	22639583	.	A	G	87	0/1	synonymous_variant(I:I)
+M28	Chr6	22639587	.	G	A	86	0/1	missense_variant(A:V)
+M28	Chr6	22641907	.	C	T	80	0/1	missense_variant(E:K)
+M28	Chr6	22642280	.	G	A	84	0/1	
+M28	Chr6	22642418	.	G	A	98	0/1	
+M28	Chr6	22642419	.	C	T	96	0/1	
+M28	Chr6	22642449	.	C	T	90	0/1	
+M28	Chr6	22642466	.	G	A	88	0/1	
+M28	Chr6	22642469	.	T	C	91	0/1	
+M29	Chr6	22639790	.	G	A	52	0/1	synonymous_variant(N:N)
+M29	Chr6	22639826	.	C	T	60	0/1	synonymous_variant(R:R)
+M29	Chr6	22639832	.	C	T	57	0/1	synonymous_variant(E:E)
+M29	Chr6	22639982	.	G	A	55	0/1	synonymous_variant(D:D)
+M29	Chr6	22641836	.	T	C	55	0/1	synonymous_variant(E:E)
+M29	Chr6	22641841	.	G	A	57	0/1	synonymous_variant(L:L)
+M29	Chr6	22642109	.	T	C	30	0/1	
+M29	Chr6	22642130	.	A	G	30	0/1	
+M29	Chr6	22642825	.	A	AG	51	0/1	
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os04g51840]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr4	30743500	.	ACC	AC	10	1/1	
-28	Chr4	30743409	.	A	G	14	1/1	
-29	Chr4	30743033	.	T	G	5	1/1	
-29	Chr4	30743042	.	C	A	4	1/1	
-29	Chr4	30743059	.	A	AC	4	1/1	
-29	Chr4	30743068	.	C	A	2	1/1	
-29	Chr4	30743084	.	A	C	1	0/1	
+M249	Chr4	30743500	.	ACC	AC	10	1/1	
+M28	Chr4	30743409	.	A	G	14	1/1	
+M29	Chr4	30743033	.	T	G	5	1/1	
+M29	Chr4	30743042	.	C	A	4	1/1	
+M29	Chr4	30743059	.	A	AC	4	1/1	
+M29	Chr4	30743068	.	C	A	2	1/1	
+M29	Chr4	30743084	.	A	C	1	0/1	
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os10g15210]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr10	8052034	.	A	G	73	0/1	synonymous_variant(A:A)
-249	Chr10	8054116	.	A	G	26	0/1	missense_variant(M:T)
-249	Chr10	8054122	.	C	G	26	0/1	missense_variant(R:T)
-249	Chr10	8054928	.	G	A	39	0/1	
-28	Chr10	8054178	.	C	T	34	0/1	synonymous_variant(S:S)
-28	Chr10	8054332	.	A	G	12	0/1	missense_variant(L:P)
-28	Chr10	8054522	.	A	T	24	0/1	
-28	Chr10	8054528	.	C	G	23	0/1	
-28	Chr10	8054537	.	C	A	23	0/1	
-29	Chr10	8051867	.	TCCCCC	TC	62	0/1	frameshift_variant
-29	Chr10	8052301	.	A	G	60	0/1	synonymous_variant(P:P)
+M249	Chr10	8052034	.	A	G	73	0/1	synonymous_variant(A:A)
+M249	Chr10	8054116	.	A	G	26	0/1	missense_variant(M:T)
+M249	Chr10	8054122	.	C	G	26	0/1	missense_variant(R:T)
+M249	Chr10	8054928	.	G	A	39	0/1	
+M28	Chr10	8054178	.	C	T	34	0/1	synonymous_variant(S:S)
+M28	Chr10	8054332	.	A	G	12	0/1	missense_variant(L:P)
+M28	Chr10	8054522	.	A	T	24	0/1	
+M28	Chr10	8054528	.	C	G	23	0/1	
+M28	Chr10	8054537	.	C	A	23	0/1	
+M29	Chr10	8051867	.	TCCCCC	TC	62	0/1	frameshift_variant
+M29	Chr10	8052301	.	A	G	60	0/1	synonymous_variant(P:P)
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os10g13550]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr10	7337673	.	TT	TTGGCAAAAT	5	1/1	
-28	Chr10	7337662	.	CC	CCAATTTTGC	13	0/1	
-29	Chr10	7337674	.	T	TGGCAAAATTGGTTA	9	0/1	
+M249	Chr10	7337673	.	TT	TTGGCAAAAT	5	1/1	
+M28	Chr10	7337662	.	CC	CCAATTTTGC	13	0/1	
+M29	Chr10	7337674	.	T	TGGCAAAATTGGTTA	9	0/1	
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os02g56510]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr2	34614218	.	G	A	41	1/1	stop_gained
-28	Chr2	34610894	.	C	T	29	1/1	synonymous_variant(L:L)
-28	Chr2	34611907	.	C	T	15	1/1	missense_variant(A:V)
-29	Chr2	34614585	.	C	T	24	1/1	missense_variant(H:Y)
+M249	Chr2	34614218	.	G	A	41	1/1	stop_gained
+M28	Chr2	34610894	.	C	T	29	1/1	synonymous_variant(L:L)
+M28	Chr2	34611907	.	C	T	15	1/1	missense_variant(A:V)
+M29	Chr2	34614585	.	C	T	24	1/1	missense_variant(H:Y)
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os08g06280]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr8	3463799	.	AAAAGGA	AA	51	0/1	
-249	Chr8	3463826	.	C	T	42	0/1	
-28	Chr8	3463447	.	T	G	79	0/1	
-28	Chr8	3463921	.	G	GC	34	0/1	
-28	Chr8	3463983	.	T	C	26	0/1	
-29	Chr8	3462962	.	T	A	49	0/1	missense_variant(R:W)
-29	Chr8	3462998	.	T	A	46	0/1	initiator_codon_variant
-29	Chr8	3463016	.	G	T	49	0/1	
-29	Chr8	3463283	.	G	C	55	0/1	
-29	Chr8	3463290	.	T	C	52	0/1	
+M249	Chr8	3463799	.	AAAAGGA	AA	51	0/1	
+M249	Chr8	3463826	.	C	T	42	0/1	
+M28	Chr8	3463447	.	T	G	79	0/1	
+M28	Chr8	3463921	.	G	GC	34	0/1	
+M28	Chr8	3463983	.	T	C	26	0/1	
+M29	Chr8	3462962	.	T	A	49	0/1	missense_variant(R:W)
+M29	Chr8	3462998	.	T	A	46	0/1	initiator_codon_variant
+M29	Chr8	3463016	.	G	T	49	0/1	
+M29	Chr8	3463283	.	G	C	55	0/1	
+M29	Chr8	3463290	.	T	C	52	0/1	
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os07g30650]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr7	18139377	.	A	C	56	0/1	synonymous_variant(A:A)
-28	Chr7	18136526	.	C	T	2	1/1	
-28	Chr7	18139477	.	T	C	92	0/1	missense_variant(F:L)
-28	Chr7	18139494	.	T	C	88	0/1	synonymous_variant(G:G)
-29	Chr7	18139777	.	C	T	41	0/1	missense_variant(H:Y)
-29	Chr7	18139836	.	A	C	50	0/1	synonymous_variant(L:L)
+M249	Chr7	18139377	.	A	C	56	0/1	synonymous_variant(A:A)
+M28	Chr7	18136526	.	C	T	2	1/1	
+M28	Chr7	18139477	.	T	C	92	0/1	missense_variant(F:L)
+M28	Chr7	18139494	.	T	C	88	0/1	synonymous_variant(G:G)
+M29	Chr7	18139777	.	C	T	41	0/1	missense_variant(H:Y)
+M29	Chr7	18139836	.	A	C	50	0/1	synonymous_variant(L:L)
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os11g17900]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr11	10044148	.	A	ATAGAT	25	0/1	frameshift_variant
-28	Chr11	10044147	.	C	T	46	0/1	synonymous_variant(L:L)
-29	Chr11	10044148	.	A	ATAG	17	0/1	inframe_insertion
+M249	Chr11	10044148	.	A	ATAGAT	25	0/1	frameshift_variant
+M28	Chr11	10044147	.	C	T	46	0/1	synonymous_variant(L:L)
+M29	Chr11	10044148	.	A	ATAG	17	0/1	inframe_insertion
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os04g02520]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr4	925275	.	T	C	45	0/1	missense_variant(D:G)
-249	Chr4	925293	.	C	T	39	0/1	missense_variant(S:N)
-28	Chr4	925767	.	A	T	94	0/1	missense_variant(L:Q)
-28	Chr4	925770	.	C	T	99	0/1	missense_variant(S:N)
-28	Chr4	925772	.	A	G	98	0/1	synonymous_variant(D:D)
-28	Chr4	925777	.	C	T	103	0/1	missense_variant(D:N)
-28	Chr4	925898	.	G	A	83	0/1	synonymous_variant(G:G)
-29	Chr4	925100	.	G	T	36	0/1	synonymous_variant(I:I)
-29	Chr4	925102	.	T	C	37	0/1	missense_variant(I:V)
-29	Chr4	925137	.	A	G	41	0/1	missense_variant(V:A)
-29	Chr4	925145	.	T	C	48	0/1	synonymous_variant(Q:Q)
-29	Chr4	925433	.	G	A	41	0/1	synonymous_variant(S:S)
-29	Chr4	925441	.	T	C	40	0/1	missense_variant(S:G)
-29	Chr4	925451	.	T	G	43	0/1	missense_variant(E:D)
-29	Chr4	925457	.	G	A	43	0/1	synonymous_variant(D:D)
-29	Chr4	925919	.	C	T	41	0/1	synonymous_variant(R:R)
-29	Chr4	926266	.	T	C	37	0/1	missense_variant(M:V)
-29	Chr4	926277	.	G	C	40	0/1	missense_variant(S:W)
-29	Chr4	926290	.	C	T	35	0/1	missense_variant(E:K)
+M249	Chr4	925275	.	T	C	45	0/1	missense_variant(D:G)
+M249	Chr4	925293	.	C	T	39	0/1	missense_variant(S:N)
+M28	Chr4	925767	.	A	T	94	0/1	missense_variant(L:Q)
+M28	Chr4	925770	.	C	T	99	0/1	missense_variant(S:N)
+M28	Chr4	925772	.	A	G	98	0/1	synonymous_variant(D:D)
+M28	Chr4	925777	.	C	T	103	0/1	missense_variant(D:N)
+M28	Chr4	925898	.	G	A	83	0/1	synonymous_variant(G:G)
+M29	Chr4	925100	.	G	T	36	0/1	synonymous_variant(I:I)
+M29	Chr4	925102	.	T	C	37	0/1	missense_variant(I:V)
+M29	Chr4	925137	.	A	G	41	0/1	missense_variant(V:A)
+M29	Chr4	925145	.	T	C	48	0/1	synonymous_variant(Q:Q)
+M29	Chr4	925433	.	G	A	41	0/1	synonymous_variant(S:S)
+M29	Chr4	925441	.	T	C	40	0/1	missense_variant(S:G)
+M29	Chr4	925451	.	T	G	43	0/1	missense_variant(E:D)
+M29	Chr4	925457	.	G	A	43	0/1	synonymous_variant(D:D)
+M29	Chr4	925919	.	C	T	41	0/1	synonymous_variant(R:R)
+M29	Chr4	926266	.	T	C	37	0/1	missense_variant(M:V)
+M29	Chr4	926277	.	G	C	40	0/1	missense_variant(S:W)
+M29	Chr4	926290	.	C	T	35	0/1	missense_variant(E:K)
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os05g51770]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr5	29709125	.	A	G	54	0/1	
-28	Chr5	29708324	.	G	A	46	0/1	
-29	Chr5	29704719	.	G	A	56	0/1	missense_variant(P:L)
-29	Chr5	29708169	.	T	C	53	0/1	synonymous_variant(R:R)
-29	Chr5	29708197	.	G	A	57	0/1	
-29	Chr5	29708264	.	G	A	66	0/1	
+M249	Chr5	29709125	.	A	G	54	0/1	
+M28	Chr5	29708324	.	G	A	46	0/1	
+M29	Chr5	29704719	.	G	A	56	0/1	missense_variant(P:L)
+M29	Chr5	29708169	.	T	C	53	0/1	synonymous_variant(R:R)
+M29	Chr5	29708197	.	G	A	57	0/1	
+M29	Chr5	29708264	.	G	A	66	0/1	
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os03g64320]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr3	36347342	.	GTAT	GTATCTAT	34	0/1	
-249	Chr3	36347351	.	TATG	TATGGATG	33	0/1	
-28	Chr3	36347346	.	GTAT	GTATTTAT	41	0/1	
-28	Chr3	36347359	.	TATG	TATGGATG	38	0/1	
-28	Chr3	36347442	.	CCTCTCTCTCTCTCTCTCTCTCTC	CCTCTCTCTCTCTCTCTCTCTC	33	0/1	
-29	Chr3	36347363	.	TATG	TATGAATG	21	0/1	
+M249	Chr3	36347342	.	GTAT	GTATCTAT	34	0/1	
+M249	Chr3	36347351	.	TATG	TATGGATG	33	0/1	
+M28	Chr3	36347346	.	GTAT	GTATTTAT	41	0/1	
+M28	Chr3	36347359	.	TATG	TATGGATG	38	0/1	
+M28	Chr3	36347442	.	CCTCTCTCTCTCTCTCTCTCTCTC	CCTCTCTCTCTCTCTCTCTCTC	33	0/1	
+M29	Chr3	36347363	.	TATG	TATGAATG	21	0/1	
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os03g23760]
@@ -347,79 +347,79 @@ LOC_Os04g20790	LOC_Os04g20790	Chr4	5781	2.76426E-4	5	3
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os02g32690]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr2	19409046	.	G	T	46	0/1	missense_variant(A:E)
-249	Chr2	19409047	.	C	T	47	0/1	missense_variant(A:T)
-249	Chr2	19409048	.	A	G	46	0/1	synonymous_variant(R:R)
-249	Chr2	19409049	.	C	T	47	0/1	missense_variant(R:H)
-28	Chr2	19420231	.	TGCGGC	TGC	72	0/1	inframe_deletion
-28	Chr2	19420463	.	G	C	82	0/1	missense_variant(Q:E)
-28	Chr2	19420634	.	TGCAG	TG	80	0/1	inframe_deletion
-28	Chr2	19420673	.	G	A	74	0/1	missense_variant(P:S)
-28	Chr2	19421642	.	A	C	24	0/1	
-28	Chr2	19421658	.	G	A	30	0/1	
-28	Chr2	19421693	.	C	G	40	0/1	
-28	Chr2	19421782	.	A	T	26	0/1	
-29	Chr2	19406091	.	A	C	37	0/1	missense_variant(S:A)
-29	Chr2	19420440	.	C	T	3	1/1	synonymous_variant(R:R)
+M249	Chr2	19409046	.	G	T	46	0/1	missense_variant(A:E)
+M249	Chr2	19409047	.	C	T	47	0/1	missense_variant(A:T)
+M249	Chr2	19409048	.	A	G	46	0/1	synonymous_variant(R:R)
+M249	Chr2	19409049	.	C	T	47	0/1	missense_variant(R:H)
+M28	Chr2	19420231	.	TGCGGC	TGC	72	0/1	inframe_deletion
+M28	Chr2	19420463	.	G	C	82	0/1	missense_variant(Q:E)
+M28	Chr2	19420634	.	TGCAG	TG	80	0/1	inframe_deletion
+M28	Chr2	19420673	.	G	A	74	0/1	missense_variant(P:S)
+M28	Chr2	19421642	.	A	C	24	0/1	
+M28	Chr2	19421658	.	G	A	30	0/1	
+M28	Chr2	19421693	.	C	G	40	0/1	
+M28	Chr2	19421782	.	A	T	26	0/1	
+M29	Chr2	19406091	.	A	C	37	0/1	missense_variant(S:A)
+M29	Chr2	19420440	.	C	T	3	1/1	synonymous_variant(R:R)
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os11g22430]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr11	12882874	.	G	A	27	0/1	missense_variant(R:W)
-249	Chr11	12882889	.	T	C	25	0/1	missense_variant(S:G)
-28	Chr11	12882998	.	G	A	25	0/1	
-28	Chr11	12883056	.	G	A	32	0/1	
-29	Chr11	12883607	.	G	T	24	0/1	
-29	Chr11	12883672	.	G	A	31	0/1	
+M249	Chr11	12882874	.	G	A	27	0/1	missense_variant(R:W)
+M249	Chr11	12882889	.	T	C	25	0/1	missense_variant(S:G)
+M28	Chr11	12882998	.	G	A	25	0/1	
+M28	Chr11	12883056	.	G	A	32	0/1	
+M29	Chr11	12883607	.	G	T	24	0/1	
+M29	Chr11	12883672	.	G	A	31	0/1	
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os04g49890]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr4	29743379	.	T	TAAAA	33	1/1	
-249	Chr4	29743385	.	G	GA	33	1/1	
-249	Chr4	29743386	.	T	TA	35	1/1	
-249	Chr4	29743578	.	TA	T	10	1/1	
-28	Chr4	29743579	.	ATT	ATTT	26	1/1	
-29	Chr4	29743387	.	GAA	GAAAAA	34	1/1	
+M249	Chr4	29743379	.	T	TAAAA	33	1/1	
+M249	Chr4	29743385	.	G	GA	33	1/1	
+M249	Chr4	29743386	.	T	TA	35	1/1	
+M249	Chr4	29743578	.	TA	T	10	1/1	
+M28	Chr4	29743579	.	ATT	ATTT	26	1/1	
+M29	Chr4	29743387	.	GAA	GAAAAA	34	1/1	
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os05g06280]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr5	3213753	.	C	T	34	0/1	missense_variant(A:V)
-28	Chr5	3207949	.	G	A	34	1/1	synonymous_variant(K:K)
-29	Chr5	3203417	.	G	T	1	0/1	missense_variant(V:L)
+M249	Chr5	3213753	.	C	T	34	0/1	missense_variant(A:V)
+M28	Chr5	3207949	.	G	A	34	1/1	synonymous_variant(K:K)
+M29	Chr5	3203417	.	G	T	1	0/1	missense_variant(V:L)
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os04g13510]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr4	7534864	.	T	C	65	0/1	missense_variant(N:D)
-249	Chr4	7537906	.	C	T	51	0/1	
-249	Chr4	7537956	.	G	T	61	0/1	
-28	Chr4	7533456	.	A	C	67	0/1	missense_variant&splice_region_variant(F:V)
-28	Chr4	7534757	.	T	C	90	0/1	synonymous_variant(E:E)
-28	Chr4	7534789	.	T	C	89	0/1	missense_variant(K:E)
-28	Chr4	7537271	.	T	A	108	0/1	missense_variant(Q:L)
-28	Chr4	7537305	.	C	T	100	0/1	missense_variant(E:K)
-28	Chr4	7537667	.	C	T	73	0/1	
-29	Chr4	7533310	.	C	T	46	0/1	synonymous_variant(K:K)
-29	Chr4	7535240	.	G	A	28	0/1	synonymous_variant(A:A)
-29	Chr4	7535269	.	T	G	36	0/1	missense_variant(K:Q)
-29	Chr4	7535285	.	C	T	35	0/1	synonymous_variant(K:K)
-29	Chr4	7537422	.	G	C	55	0/1	missense_variant(P:A)
-29	Chr4	7537435	.	T	G	52	0/1	missense_variant(E:D)
-29	Chr4	7537561	.	C	T	64	0/1	
-29	Chr4	7537571	.	G	A	62	0/1	
-29	Chr4	7537577	.	A	G	59	0/1	
-29	Chr4	7537598	.	C	T	66	0/1	
-29	Chr4	7538071	.	G	A	73	0/1	
-29	Chr4	7538425	.	T	A	47	0/1	
-29	Chr4	7538426	.	A	C	47	0/1	
+M249	Chr4	7534864	.	T	C	65	0/1	missense_variant(N:D)
+M249	Chr4	7537906	.	C	T	51	0/1	
+M249	Chr4	7537956	.	G	T	61	0/1	
+M28	Chr4	7533456	.	A	C	67	0/1	missense_variant&splice_region_variant(F:V)
+M28	Chr4	7534757	.	T	C	90	0/1	synonymous_variant(E:E)
+M28	Chr4	7534789	.	T	C	89	0/1	missense_variant(K:E)
+M28	Chr4	7537271	.	T	A	108	0/1	missense_variant(Q:L)
+M28	Chr4	7537305	.	C	T	100	0/1	missense_variant(E:K)
+M28	Chr4	7537667	.	C	T	73	0/1	
+M29	Chr4	7533310	.	C	T	46	0/1	synonymous_variant(K:K)
+M29	Chr4	7535240	.	G	A	28	0/1	synonymous_variant(A:A)
+M29	Chr4	7535269	.	T	G	36	0/1	missense_variant(K:Q)
+M29	Chr4	7535285	.	C	T	35	0/1	synonymous_variant(K:K)
+M29	Chr4	7537422	.	G	C	55	0/1	missense_variant(P:A)
+M29	Chr4	7537435	.	T	G	52	0/1	missense_variant(E:D)
+M29	Chr4	7537561	.	C	T	64	0/1	
+M29	Chr4	7537571	.	G	A	62	0/1	
+M29	Chr4	7537577	.	A	G	59	0/1	
+M29	Chr4	7537598	.	C	T	66	0/1	
+M29	Chr4	7538071	.	G	A	73	0/1	
+M29	Chr4	7538425	.	T	A	47	0/1	
+M29	Chr4	7538426	.	A	C	47	0/1	
 
 ----------------------------------------------------------------
 [Candidate gene: LOC_Os04g20790]
 #SAMPLE	CHROM	POS	ID	REF	ALT	DP	GT	EFF
-249	Chr4	11671949	.	C	T	12	1/1	synonymous_variant(Q:Q)
-28	Chr4	11665898	.	AGG	AG	17	1/1	frameshift_variant
-29	Chr4	11671932	.	A	C	10	1/1	missense_variant(M:R)
-29	Chr4	11672232	.	ACCC	ACC	8	1/1	
-29	Chr4	11672469	.	G	GT	10	1/1	
+M249	Chr4	11671949	.	C	T	12	1/1	synonymous_variant(Q:Q)
+M28	Chr4	11665898	.	AGG	AG	17	1/1	frameshift_variant
+M29	Chr4	11671932	.	A	C	10	1/1	missense_variant(M:R)
+M29	Chr4	11672232	.	ACCC	ACC	8	1/1	
+M29	Chr4	11672469	.	G	GT	10	1/1	
