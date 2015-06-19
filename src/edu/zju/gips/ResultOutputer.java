@@ -83,7 +83,7 @@ public class ResultOutputer {
                         + "\nIf phenotype is  dominant: \n"
                         + "\nExpected number of random genes that may be reported: \n"
                         + "\n[Candidate Gene List]"
-                        + "\n#Details on the variants they harbor can be found in CANDIDATE_GENES.txt"
+                        + "\n#Detailed information on the variants that these candidate genes harbor is provided in CANDIDATE_GENES.txt"
                         + "\nGENE_ID\tGENE_NAME\tChr\tEFF_REGION_LENGHT\tSIGNIFICANCE\tNUM_VARIANT\tNUM_SAMPLE\n"
                         + ""
                 );   
@@ -131,7 +131,7 @@ public class ResultOutputer {
                         + "\nIf phenotype is  dominant: "+sampleParameterBag.get1Phenotype1GeneValidationHeterozygous()+"\n"
                         + "\nExpected number of random genes that may be reported: "+sampleParameterBag.getSampleGeneBag().getRandomGeneDiscoveryNumberInGenome()+"\n"
                         + "\n[Candidate Gene List]"
-                        + "\n#Details on the variants they harbor can be found in CANDIDATE_GENES.txt"
+                        + "\n#Detailed information on the variants that these candidate genes harbor is provided in CANDIDATE_GENES.txt"
                         + "\nGENE_ID\tGENE_NAME\tChr\tEFF_REGION_LENGHT\tSIGNIFICANCE\tNUM_VARIANT\tNUM_SAMPLE\n"
                         + ""
                 );   

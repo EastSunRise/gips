@@ -162,7 +162,7 @@ public class SNPEff extends edu.zju.snpAnnotationTools.SNPAnnotationTool{
                                 snp.setAnnotationFieldInfo(eff);
                                 snp = this.annotate1SNPByEff(snp);
                         }else if(line.contains("ANN=")){
-                                String ann=lineHandler.regexMatch(line, "ANN=(.*\\t)");
+                                String ann=lineHandler.regexMatch(line, "ANN=(.*\\|)");
                                 snp.setSNPRawInfoBeforeAnnotate(line.replace("ANN="+ann,""));
                                 snp.setAnnotationFieldInfo(ann);
                                 snp = this.annotate1SNPByAnn(snp);

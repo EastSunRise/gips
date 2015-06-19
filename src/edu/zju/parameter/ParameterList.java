@@ -53,7 +53,7 @@ public class ParameterList {
                                 add("REF_GENOME_ANNOTATION.GFF :");                                
                                 add("SNPEFF_GENOME_VERSION     :  ");
                                 add("SNPEFF  :    ");
-                                add("CANDIDATE_CRITERIA :    ");
+                                add("CANDIDATE_CRITERION :    ");
                                 add("VAR_CALL_SCRIPT :   ");
                                 add("EFF_REGION  : CDS|SpliceSite=2  ");
                                 add("VAR_FILTERS :  BA   ");

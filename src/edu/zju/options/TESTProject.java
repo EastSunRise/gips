@@ -56,7 +56,7 @@ public class TESTProject {
                      + "\nEFF_REGION   : CDS|SpliceSite=2"
                      + "\nVAR_FILTERS  : BA"
                      + "\nSCORE_MATRIX : DEFAULT"
-                     + "\nCANDIDATE_CRITERIA :"
+                     + "\nCANDIDATE_CRITERION :"
                      + "\nNUM_SIM_SNPS : 800 "
                      + "\n\n[SAMPLE_LIST]\nsample1\nsample2\nsample3"
                      + "\n\n[SAMPLE]\nSAMPLE_NAME :sample1\nSAMPLE.VCF :"+Init.getDataDirectory()+s+"sample1"+s+"sample1.vcf\nREADS_ALIGNMENT.SAM :"+Init.getDataDirectory()+s+"sample1"+s+"sample1.sam"

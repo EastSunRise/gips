@@ -94,7 +94,7 @@ public class GlobalParameter {
                                         if(info!=null&&!info.isEmpty())filters=info;
                                         break;
                                 }
-                                case "CANDIDATE_CRITERIA":{
+                                case "CANDIDATE_CRITERION":{
                                         try {
                                                 if(info!=null&&!info.isEmpty())anticipation=Integer.parseInt(info);
                                                 break;                                        
@@ -180,7 +180,7 @@ public class GlobalParameter {
                         anticipation=sampleNumber;
                 }else if(anticipation>sampleNumber||anticipation<=0){
                      anticipation=sampleNumber;
-                     CExecutor.println(CExecutor.getRunningTime()+"CANDIDATE_CRITERIA is reset to sample numbers");   
+                     CExecutor.println(CExecutor.getRunningTime()+"CANDIDATE_CRITERION is reset to sample numbers");   
                 }
                 return anticipation;
         }
@@ -333,7 +333,7 @@ public class GlobalParameter {
                 }
                 sb.append("\nEFF_REGION:"+effectiveRegion);
                 sb.append("\nVAR_FILTERS:"+filters);
-                sb.append("\nCANDIDATE_CRITERIA:"+getAnticipation());
+                sb.append("\nCANDIDATE_CRITERION:"+getAnticipation());
                 sb.append("\nSNPEFF:"+snpEffPath);
                 if(libGffFile!=null) sb.append("\nLIB_GENOME_ANNOTATION.GFF:"+libGffFile.getFilePath());
                 sb.append("\nLIB_PHENOTYPE_VAR:"+clinicalVariantLibrary);
