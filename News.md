@@ -10,3 +10,5 @@
 **20150517**:   Move to github.
 
 **20150526**:	Upload scripts
+
+**20150619**:	Version 1.2 released
