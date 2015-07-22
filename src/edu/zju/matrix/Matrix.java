@@ -37,8 +37,8 @@ public class Matrix {
         * @return 
         */
        public int getScore(String originAA,String mutatedAA){
-              int minimumScore=0;
-              if(originAA.length()!=mutatedAA.length()) return 2;
+              int minimumScore=100;
+              if(originAA.length()!=mutatedAA.length()) return -2;
               //origin * to mutation ? (eg. codon lost) 
               //common.CExecutor.println("Don't find the score of "+originAA+" mutated to "+mutatedAA);
               for(int i=0;i<originAA.length();i++){
