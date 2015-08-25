@@ -4,16 +4,15 @@ Next generation sequencing (NGS) has become a fast and cost-effective approach f
 
 Gene identification via phenotype sequencing (GIPS) computes four measurements of study effectiveness to help iterative optimization of a study protocol. The four measurements are:
 
-  1. chance of reporting true phenotype-associated genes;
-  2. number of random genes that are expected to meet reporting criterion;
-  3. significance of each reported gene to associate with phenotype;
-  4. significance of violating Mendelian assumption, if no gene passes reporting criterion or all reported genes are confirmed false positives.
+  1. The chance of reporting true phenotype-associated genes.
+  2. The number of random genes that are expected to meet reporting criterion.
+  3. The significance of each reported gene to associate with phenotype.
+  4. The significance of violating Mendelian assumption, if no gene passes reporting criterion or all reported genes are confirmed false positives.
 
 # Donwload #
 
   * [GIPS software package](https://raw.githubusercontent.com/RLIBS-ZJU/gips/wiki/GIPS.jar)           Require JAVA 1.7 on Linux.
   * [GIPS Manual](https://raw.githubusercontent.com/RLIBS-ZJU/gips/wiki/GIPS_User_Manual.pdf)
-  * [Kabuki exome sequencing data reanalysis scripts](https://github.com/RLIBS-ZJU/gips/tree/wiki/Scripts)
   * [Pho2 supressor identification scripts](https://github.com/RLIBS-ZJU/gips/tree/wiki/Scripts)
 
 # Command Options #
